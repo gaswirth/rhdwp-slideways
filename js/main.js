@@ -22,72 +22,19 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
    ========================================================================== */
 
 // Init
-var skr = null;
 var cycleType = null;
 var playlistId = 'PLAYLIST_ID';
 
 (function($){
 	$(document).ready(function($){
-		// Fancy scrolly navigation
-		$('#site-navigation a').on('click', function(e){
-			e.preventDefault();
-
-			var $a = $( '#' + $(this).attr('href').split('#').pop() );
-
-			// Set data-offset in HTML to add offset parameter
-			var offsetAttr = $a.attr('data-offset');
-			var yOffset;
-
-			if ( offsetAttr )
-				yOffset = offsetAttr;
-			else
-				yOffset = 0;
-
-			$('html, body').animate({
-				scrollTop: $a.offset().top - yOffset
-			}, 1000, 'easeInOutCubic');
-		});
-
-
-		if ( !isMobile && !isTablet ) {
-			// Skrollr parallax
-			$(".full-bg:nth-of-type(1)")
-				.attr("data-start", "background-position: center 0px")
-				.attr("data-top-bottom", "background-position: center 400px");
-
-			$(".full-bg:nth-of-type(n+2)")
-				.attr("data-bottom-top", "background-position: center -200px;")
-				.attr("data-top-bottom", "background-position: center 200px;");
-
-			if ( $window.width() > 640 ) {
-				skrollrInit();
-			}
-		}
-
 
 		// FitText
-		fitText(document.getElementById('site-title'), 0.82);
+		// fitText(document.getElementById('site-title'), 0.82);
 
 
 		// Window resizing
 		var resizeId;
-
-		function doneResizing(){
-			if ( $window.width() < 640 ) {
-				if ( skr ) {
-					try {
-						skr.destroy();
-						skr = null;
-					} catch(err) {
-						throw "Error: Parallax disabled on this device.\n" . err;
-					}
-				}
-			} else {
-				if ( !skr ) {
-					skrollrInit();
-				}
-			}
-		}
+		
 
 		// News Scrolling
 		if ( $window.width() < 640 )
@@ -108,37 +55,12 @@ var playlistId = 'PLAYLIST_ID';
 				.html('<iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/videoseries?list=' + playlistId + '" width="100%" height="100%" frameborder="0" />');
 		}
 
-
-		// Resize event
-		$window.on('resize', function(){
-			if ( $window.width() < 640 && cycleType == 'multi' ) {
-				$('.news-entries').cycle('destroy');
-				rhdCycleInit(false);
-			} else if ( $window.width() > 640 && cycleType == 'single' ) {
-				$('.news-entries').cycle('destroy');
-				rhdCycleInit(true);
-			}
-
-			clearTimeout(resizeId);
-			resizeId = setTimeout(doneResizing, 500);
-		});
 	});
 
 
 	/* ==========================================================================
 		Functions
 	============================================================================= */
-
-	function skrollrInit() {
-		try {
-			skr = skrollr.init({
-				forceHeight: false,
-				smoothScrollingDuration: -100
-			});
-		} catch(err) {
-			throw "Error: Parallax disabled on this device.\n" . err;
-		}
-	}
 
 	function rhdCycleInit( is_carousel ) {
 		if ( is_carousel === true ) {

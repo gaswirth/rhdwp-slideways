@@ -16,26 +16,8 @@ $section_args = array(
 );
 ?>
 
-	<section id="primary" class="site-content">
+	<div id="primary" class="site-content">
 		<div id="content" role="main">
-
-			<section id="top">
-				<header id="masthead" class="full-bg">
-					<div class="header-content">
-						<h1 id="site-title"><?php bloginfo( 'name' ); ?></h1>
-						<?php
-							$nav_args = array(
-								'menu_location' => 'primary',
-								'menu_id' => 'site-navigation',
-								'container' => 'nav',
-								'container_id' => 'site-navigation-container',
-								'walker' => new RHD_Walker_Nav
-							);
-							wp_nav_menu( $nav_args );
-						?>
-					</div>
-				</header>
-			</section>
 
 			<section id="news">
 				<h2 class="section-title">Latest News</h2>
@@ -147,7 +129,8 @@ $section_args = array(
 					?>
 				</div>
 			</section>
+			
 		</div><!-- #content -->
-	</section><!-- #primary -->
+	</div><!-- #primary -->
 
 <?php get_footer(); ?>

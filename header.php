@@ -52,4 +52,23 @@
 		<![endif]-->
 
 		<div id="page" class="hfeed site">
+			<header id="masthead" class="full-bg">
+				<?php
+				$nav_args = array(
+					'menu_location' => 'primary',
+					'menu_id' => 'site-navigation',
+					'container' => 'nav',
+					'container_id' => 'site-navigation-container',
+					'walker' => new RHD_Walker_Nav
+				);
+				?>
+				
+				<h1 id="site-title"><?php bloginfo( 'name' ); ?></h1>
+				
+				<?php wp_nav_menu( $nav_args ); ?>
+				
+				<button id="hamburger" class="c-hamburger c-hamburger--htx">
+					<span>Toggle nav</span>
+				</button>
+			</header>
 			<main id="main" class="clearfix">
