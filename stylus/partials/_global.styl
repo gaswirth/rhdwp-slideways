@@ -1,0 +1,120 @@
+/* ==========================================================================
+	Global Stylus Variables
+   ========================================================================== */
+
+// Variables
+$color1 = #ACC3FE
+$color2 = #5E7BD1
+$ff_body = 'Roboto', sans-serif
+$ff_headline = 'Gabriel Sans Thin', sans-serif
+
+$updir = '//dev.roundhouse-designs.com/SITEBASE/wp-content/uploads'
+
+// Classes
+
+.unselectable
+	-webkit-user-select: none; /* Chrome/Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	-o-user-select: none;
+	user-select: none;
+
+
+.invisible
+	position absolute
+	visibility hidden
+	margin 0
+
+
+// Functions
+
+-wrapper( $topMargin = false, $bottomMargin = false, $customWidth = false, $customMax = false )
+	if $customWidth == false
+		$w = 85%
+	else
+		$w = $customWidth
+
+	if $customMax == false
+		$mw = 64rem
+	else
+		$mw = $customMax
+
+	if $topMargin == false
+		$topMargin = 0
+	if $bottomMargin == false
+		$bottomMargin = 0
+
+	width $w
+	max-width $mw
+	position relative
+	margin $topMargin auto $bottomMargin auto
+
+
+-unwrapper()
+	width 100%
+
+
+-clearfix()
+	@extends .clearfix
+
+
+-flexbox()
+	text-align justify
+	padding 0
+
+	&:after
+		width 100%
+		display inline-block
+		content ''
+
+-flexitem()
+	display inline-block
+
+
+-body-shadow( $yPos )
+	box-shadow 0em $yPos 0.45em 0em rgba(0,0,0,0.5)
+
+
+-placeholder-props( $famVal, $color = null, $opacity = null )
+	&::-webkit-input-placeholder
+		font-family $famVal
+		if $color !=null
+			color $color
+
+		if $opacity != null
+			-opacity( $opacity )
+
+	&:-moz-placeholder /* Firefox 18- */
+		font-family $famVal
+		color $color
+		if $opacity != null
+			-opacity( $opacity )
+
+	&::-moz-placeholder  /* Firefox 19+ */
+		font-family $famVal
+		color $color
+		if $opacity != null
+			-opacity( $opacity )
+
+	&:-ms-input-placeholder
+		font-family $famVal
+		color $color
+		if $opacity != null
+			opacity( $opacity )
+
+
+-opacity( $val )
+	-moz-opacity $val
+	-webkit-opacity $val
+	opacity $val
+
+
+-transform( $val )
+	-webkit-transform $val
+	transform $val
+
+
+-border-radius( $val )
+	-webkit-border-radius $val
+	-moz-border-radius $val
+	border-radius $val
