@@ -87,26 +87,6 @@ function rhd_add_editor_styles()
 add_action( 'after_setup_theme', 'rhd_add_editor_styles' );
 
 
-/**
- * rhd_skrollr_refresh function.
- *
- * @access public
- * @return void
- */
-function rhd_skrollr_refresh()
-{
-	echo '
-		<script>
-			jQuery(window).load(function(){
-				if ( jQuery("body").hasClass("mobile") === false && ( skr != null || typeof skr != "undefined" ) ) {
-					skr.refresh();
-				}
-			});
-		</script>
-		';
-}
-add_action( 'wp_head', 'rhd_skrollr_refresh', 999 );
-
 /* ==========================================================================
    Sidebars + Menus
    ========================================================================== */
