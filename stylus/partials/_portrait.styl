@@ -1,0 +1,31 @@
+@media screen and ( orientation: portrait )
+	html
+	body
+		width 100% !important
+		height auto !important
+
+	#main
+		margin-top $nav_ht
+
+		#content
+			section
+				float none
+				display block
+				padding 0
+
+				&.slide
+					-wrapper(1em, 1em, 90%)
+
+				&.full-image
+					width 100%
+					max-height 100vh
+					overflow hidden
+
+					img
+						width (@width)
+						height auto
+
+
+	#about
+		.section-content
+			-column-width(100vw)
