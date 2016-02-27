@@ -19,6 +19,10 @@ $section_args = array(
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 
+			<section id="full-1" class="full-image">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/02/A.-Ewoldt-1.jpg" alt="Ali Ewoldt">
+			</section>
+
 			<section id="news" class="slide">
 				<h2 class="section-title">Latest News</h2>
 				<div class="section-content">
@@ -70,7 +74,30 @@ $section_args = array(
 				</div>
 			</section>
 
-			<section id="full-bg-1" class="full-bg"></section>
+			<section id="full-2" class="full-image">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/02/A.-Ewoldt-2.jpg" alt="Ali Ewoldt">
+			</section>
+
+			<section id="about" class="slide">
+				<?php
+				$section_args['name'] = 'about';
+				$section = get_posts( $section_args );
+				?>
+
+				<h2 class="section-title"><?php echo $section[0]->post_title; ?></h2>
+
+				<div class="section-content">
+					<?php
+						if ( $section ) {
+							echo apply_filters( 'the_content', $section[0]->post_content );
+						}
+					?>
+				</div>
+			</section>
+
+			<section id="full-3" class="full-image">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/02/A.-Ewoldt-3.jpg" alt="Ali Ewoldt">
+			</section>
 
 			<section id="resume" class="slide">
 				<?php
@@ -89,7 +116,9 @@ $section_args = array(
 				</div>
 			</section>
 
-			<section id="full-bg-2" class="full-bg"></section>
+			<section id="full-4" class="full-image">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/02/A.-Ewoldt-4.jpg" alt="Ali Ewoldt">
+			</section>
 
 			<section id="media" class="slide">
 				<?php
@@ -111,7 +140,9 @@ $section_args = array(
 				</div>
 			</section>
 
-			<section id="full-bg-3" class="full-bg"></section>
+			<section id="full-5" class="full-image">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/02/A.-Ewoldt-5.jpg" alt="Ali Ewoldt">
+			</section>
 
 			<section id="contact" class="slide">
 				<?php

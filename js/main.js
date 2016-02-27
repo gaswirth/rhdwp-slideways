@@ -19,6 +19,7 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 
 (function($){
 	var mw = false;
+	var orient = null;
 
 	$(document).ready(function($){
 
@@ -26,6 +27,10 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 
 		// Resize events
 		$window.on('resize', function(){
+			orient = getOrient();
+
+			setTotalWidth();
+
 			//setUnsetMousewheel();
 		});
 
@@ -40,14 +45,43 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 		//setUnsetMousewheel();
 
 		toggleBurger();
+
+		orient = getOrient();
+
+		$('#content').imagesLoaded(function(){
+			setTotalWidth();
+		});
+	}
+
+
+	function getOrient() {
+		if ( $window.height() < $window.width() )
+			return 'land';
+
+		else
+			return 'port';
+	}
+
+
+	function setTotalWidth() {
+		var w = 0;
+
+		if ( orient == 'land' ) {
+			$("#content > section").each(function(){
+				var $this = $(this);
+				w += parseInt($this.width(), 10) + parseInt($this.css('paddingLeft'), 10) + parseInt($this.css('paddingRight'), 10);
+			});
+		}
+
+		$('html, body').width(w);
 	}
 
 
 	function setUnsetMousewheel() {
-		if ( $window.height() < $window.width() && mw === false ) {
+		if ( orient == 'land' && mw === false ) {
 			mousewheelOn();
 			mw = true;
-		} else {
+		} else if ( orient == 'port' && mw === true ) {
 			mousewheelOff();
 			mw = false;
 		}
