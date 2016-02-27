@@ -56,13 +56,15 @@ function rhd_enqueue_scripts()
 {
 	wp_register_script( 'rhd-plugins', RHD_THEME_DIR . '/js/plugins.js', array( 'jquery' ), null, true );
 	wp_register_script( 'imagesloaded', RHD_THEME_DIR . '/js/vendor/imagesloaded/imagesloaded.pkgd.min.js', array( 'jquery' ), null, true );
+	wp_register_script( 'jquery.columnizer', RHD_THEME_DIR . '/js/vendor/jquery.columnizer/src/jquery.columnizer.min.js', array(), null, true );
 	wp_register_script( 'jquery-mousewheel', RHD_THEME_DIR . '/js/vendor/jquery-mousewheel/jquery.mousewheel.min.js', array( 'jquery' ), null, true );
 
 	$main_deps = array(
 		'rhd-plugins',
 		'jquery',
+		'imagesloaded',
+		'jquery.columnizer',
 		'jquery-mousewheel',
-		'imagesloaded'
 	);
 
 	wp_register_script( 'rhd-main', RHD_THEME_DIR . '/js/main.js', $main_deps, null, true );
@@ -137,7 +139,6 @@ register_nav_menu( 'primary', 'Main Site Navigation' );
 if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
-	add_theme_support( 'infinite-scroll', array( 'container' => 'content', 'footer' => 'page' ) );
 }
 
 

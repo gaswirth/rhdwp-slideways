@@ -18,8 +18,8 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
    ========================================================================== */
 
 (function($){
-	var mw = false;
-	var orient = null;
+	var mw = false,
+		orient = null;
 
 	$(document).ready(function($){
 
@@ -51,6 +51,8 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 		$('#content').imagesLoaded(function(){
 			setTotalWidth();
 		});
+
+		//aboutColumnize();
 	}
 
 
@@ -74,6 +76,15 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 		}
 
 		$('html, body').width(w);
+	}
+
+
+	function aboutColumnize() {
+		$('#about .section-content').columnize({
+			width : 800,
+			height : $("#about .section-content").height(),
+			buildOnce : false,
+		});
 	}
 
 
