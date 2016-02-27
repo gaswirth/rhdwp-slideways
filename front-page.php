@@ -91,7 +91,7 @@ $section_args = array(
 
 			<section id="full-bg-2" class="full-bg"></section>
 
-			<section id="media" class="full-bg">
+			<section id="media">
 				<?php
 				$section_args['name'] = 'media';
 				$section = get_posts( $section_args );
@@ -129,7 +129,7 @@ $section_args = array(
 					?>
 				</div>
 			</section>
-			
+
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
