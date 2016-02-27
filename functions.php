@@ -38,7 +38,7 @@ function rhd_enqueue_styles()
 
 	wp_register_style( 'rhd-main', RHD_THEME_DIR . '/css/main.css', array(), '1', 'all' );
 	wp_register_style( 'rhd-enhanced', RHD_THEME_DIR . '/css/enhanced.css', array(), '1', 'all' );
-	wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400' );
+	wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700,400italic' );
 
 	if ( !rhd_is_mobile() ) {
 		wp_enqueue_style( 'rhd-enhanced' );
@@ -77,7 +77,7 @@ add_action('wp_enqueue_scripts', 'rhd_enqueue_scripts');
 function rhd_add_editor_styles()
 {
 	//Google Fonts in admin editor
-	$font_url = '//fonts.googleapis.com/css?family=Open+Sans:400,700';
+	$font_url = '//fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700,400italic';
 	$font_url = str_replace( ',', '%2C', $font_url );
 	$font_url = str_replace( ':', '%3A', $font_url );
     add_editor_style( $font_url );

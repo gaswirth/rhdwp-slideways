@@ -18,9 +18,16 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
    ========================================================================== */
 
 (function($){
+	var mw = false;
+
 	$(document).ready(function($){
 
 		rhdInit();
+
+		// Resize events
+		$window.on('resize', function(){
+			//setUnsetMousewheel();
+		});
 
 	});
 
@@ -30,14 +37,45 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 	============================================================================= */
 
 	function rhdInit() {
-		initMousewheel();
+		//setUnsetMousewheel();
+
+		toggleBurger();
 	}
 
 
-	function initMousewheel() {
+	function setUnsetMousewheel() {
+		if ( $window.height() < $window.width() && mw === false ) {
+			mousewheelOn();
+			mw = true;
+		} else {
+			mousewheelOff();
+			mw = false;
+		}
+	}
+
+
+	function mousewheelOn() {
 		$('html, body, *').mousewheel(function(e, delta) {
 			e.preventDefault();
 			this.scrollLeft -= (delta * 40);
+		});
+	}
+
+	function mousewheelOff() {
+		$('html, body, *').mousewheel(function(e, delta) {
+			// Nothing to see here...
+		});
+	}
+
+
+	// Adapted from Hamburger Icons: https://github.com/callmenick/Animating-Hamburger-Icons
+	function toggleBurger() {
+		var toggles = $(".c-hamburger");
+
+		toggles.click(function(e){
+			e.preventDefault();
+			$(this).toggleClass('is-active');
+			$("#rhd-nav-menu").slideToggle();
 		});
 	}
 

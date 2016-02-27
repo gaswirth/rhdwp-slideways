@@ -62,11 +62,13 @@
 					'walker' => new RHD_Walker_Nav
 				);
 				?>
-				
+
 				<h1 id="site-title"><?php bloginfo( 'name' ); ?></h1>
-				
-				<?php wp_nav_menu( $nav_args ); ?>
-				
+
+				<div id="rhd-nav-menu">
+					<?php wp_nav_menu( $nav_args ); ?>
+				</div>
+
 				<button id="hamburger" class="c-hamburger c-hamburger--htx">
 					<span>Toggle nav</span>
 				</button>

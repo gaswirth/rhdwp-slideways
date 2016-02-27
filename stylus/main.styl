@@ -4,6 +4,7 @@
 @require "partials/_helpers.styl"
 @require "partials/_galleries.styl"
 @require "partials/_overrides.styl"
+@require "partials/_portrait.styl"
 
 /* ==========================================================================
 	Main Styles
@@ -14,9 +15,9 @@ html
 	height 100%
 	text-shadow 0 0 1px transparent
 	font-size 16px
+	color $color1
 	margin 0
 	background white
-	color black
 	font-family $ff_body
 
 
@@ -26,13 +27,13 @@ body
 
 a
 	outline 0 !important
-	color $color1
+	color $color2
 	text-decoration none
 	transition color 0.25s
 
 	&:hover
 	&:active
-		color $color2
+		color $color3
 
 
 h1
@@ -42,6 +43,7 @@ h4
 h5
 h6
 	font-weight 400
+	font-family $ff_headline
 
 
 #page
@@ -70,30 +72,54 @@ h6
 #masthead
 	width 100%
 	height $nav_ht
-	background $color2
+	background $color3
 	position fixed
 	top 0
 	left 0
-	color white
+	z-index 999
 
 	#site-title
-		font-size 3em
+		font-size 2.8em
 		margin 0
+		position absolute
+		top 50%
+		left 2rem
+		-transform(translateY(-50%))
 		line-height 1
+		color white
 
 	#hamburger
 		height 100%
 		position absolute
-		right 0
+		right 1.3rem
 		top 0
+		background-color transparent
 
 
-#rhd-logo-footer
-	width 1.35em
-	height 1.35em
-	margin 0 0.05em
-	position relative
-	bottom 0.15em
+#rhd-nav-menu
+	background $color3
+	position absolute
+	display none
+	right 0
+	top $nav_ht
+	text-align right
+
+	#site-navigation
+		padding-left 0
+		margin 1rem 2rem
+		font-family $ff_headline
+		font-weight 700
+
+		.menu-item
+			font-size 1.4em
+			margin 0 0.5em
+
+			a
+				color white
+
+				&:hover
+				&:active
+					color $color2
 
 
 #content
@@ -125,3 +151,15 @@ h6
 	iframe
 		max-width 100%
 		display block
+
+
+#rhd-logo-footer
+	width 1.35em
+	height 1.35em
+	margin 0 0.05em
+	position relative
+	bottom 0.15em
+
+
+#colophon
+	text-align center
