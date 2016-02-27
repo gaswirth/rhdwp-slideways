@@ -19,7 +19,7 @@ $section_args = array(
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 
-			<section id="news">
+			<section id="news" class="content">
 				<h2 class="section-title">Latest News</h2>
 				<div class="section-content">
 					<?php
@@ -72,7 +72,7 @@ $section_args = array(
 
 			<section id="full-bg-1" class="full-bg"></section>
 
-			<section id="resume">
+			<section id="resume" class="content">
 				<?php
 				$section_args['name'] = 'resume';
 				$section = get_posts( $section_args );
@@ -91,7 +91,7 @@ $section_args = array(
 
 			<section id="full-bg-2" class="full-bg"></section>
 
-			<section id="media">
+			<section id="media" class="content">
 				<?php
 				$section_args['name'] = 'media';
 				$section = get_posts( $section_args );
@@ -113,7 +113,7 @@ $section_args = array(
 
 			<section id="full-bg-3" class="full-bg"></section>
 
-			<section id="contact">
+			<section id="contact" class="content">
 				<?php
 				$section_args['name'] = 'contact';
 				$section = get_posts( $section_args );

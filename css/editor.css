@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 12:09:49 PM on 27-02-2016
+* RHD Dev: Compiled at 12:14:49 PM on 27-02-2016
 ***/
 
 /**
@@ -425,7 +425,12 @@ h6 {
   position: relative;
   float: left;
   display: inline-block;
-  padding: 4em 0;
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+#content section.content {
+  padding-left: 1em;
+  padding-right: 1em;
 }
 #content .section-title {
   font-size: 2.5em;
