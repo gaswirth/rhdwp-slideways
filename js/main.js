@@ -27,11 +27,7 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 
 		// Resize events
 		$window.on('resize', function(){
-			orient = getOrient();
-
 			setTotalWidth();
-
-			//setUnsetMousewheel();
 		});
 	});
 
@@ -41,16 +37,55 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 	============================================================================= */
 
 	function rhdInit() {
-		//setUnsetMousewheel();
+		setMousewheel();
 
 		toggleBurger();
-
-		orient = getOrient();
 
 		$('#content').imagesLoaded(function(){
 			setTotalWidth();
 		});
 
+		rhdAnimatedNav();
+	}
+
+
+	function getOrient() {
+		if ( $window.height() < $window.width() )
+			return 'land';
+
+		else
+			return 'port';
+	}
+
+
+	function setTotalWidth() {
+		var w = 0;
+
+		orient = getOrient();
+
+		if ( orient == 'land' ) {
+			$("#content > section").each(function(){
+				var $this = $(this);
+				w += parseInt($this.width(), 10) + parseInt($this.css('paddingLeft'), 10) + parseInt($this.css('paddingRight'), 10);
+			});
+		}
+
+		w += 2; // Safety pixels
+
+		$('html, body').width(w);
+	}
+
+
+	function aboutColumnize() {
+		$('#about .section-content').columnize({
+			width : 800,
+			height : $("#about .section-content").height(),
+			buildOnce : false,
+		});
+	}
+
+
+	function rhdAnimatedNav() {
 		$("#site-navigation .menu-item a").on('click', function(e){
 			var elemID = $(this).attr('href'),
 				elemLeft = $(elemID).offset().left,
@@ -73,61 +108,10 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 	}
 
 
-	function getOrient() {
-		if ( $window.height() < $window.width() )
-			return 'land';
-
-		else
-			return 'port';
-	}
-
-
-	function setTotalWidth() {
-		var w = 0;
-
-		if ( orient == 'land' ) {
-			$("#content > section").each(function(){
-				var $this = $(this);
-				w += parseInt($this.width(), 10) + parseInt($this.css('paddingLeft'), 10) + parseInt($this.css('paddingRight'), 10);
-			});
-		}
-
-		++w; // Safety pixel
-
-		$('html, body').width(w);
-	}
-
-
-	function aboutColumnize() {
-		$('#about .section-content').columnize({
-			width : 800,
-			height : $("#about .section-content").height(),
-			buildOnce : false,
-		});
-	}
-
-
-	function setUnsetMousewheel() {
-		if ( orient == 'land' && mw === false ) {
-			mousewheelOn();
-			mw = true;
-		} else if ( orient == 'port' && mw === true ) {
-			mousewheelOff();
-			mw = false;
-		}
-	}
-
-
-	function mousewheelOn() {
+	function setMousewheel() {
 		$('html, body, *').mousewheel(function(e, delta) {
 			e.preventDefault();
 			this.scrollLeft -= (delta * 40);
-		});
-	}
-
-	function mousewheelOff() {
-		$('html, body, *').mousewheel(function(e, delta) {
-			// Nothing to see here...
 		});
 	}
 
