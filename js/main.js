@@ -73,6 +73,8 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 			});
 		}
 
+		++w; // Safety pixel
+
 		$('html, body').width(w);
 	}
 
