@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 6:21:12 PM on 27-02-2016
+* RHD Dev: Compiled at 11:06:19 AM on 29-02-2016
 ***/
 
 .unselectable {
@@ -204,16 +204,13 @@
 }
 .clearfix:before,
 #content:before,
-#content .section-content:before,
 .clearfix:after,
-#content:after,
-#content .section-content:after {
+#content:after {
   content: " ";
   display: table;
 }
 .clearfix:after,
-#content:after,
-#content .section-content:after {
+#content:after {
   clear: both;
 }
 * {
@@ -484,13 +481,18 @@ h6 {
 }
 #content section {
   width: auto;
+  max-width: 100vw;
   height: 100%;
   position: relative;
-  display: inline-block;
 }
 #content section.slide {
-  max-width: 100vw;
   padding: 4em 2em 1em;
+}
+#content section.slide .section-content {
+  width: 85%;
+  max-width: 64rem;
+  position: relative;
+  margin: 0 auto 0 auto;
 }
 #content section.full-image {
   padding-top: 0;
@@ -500,25 +502,46 @@ h6 {
   width: auto;
   height: 100%;
 }
+#content section.column-slide {
+  padding: 4em 2em 1em;
+}
+#content section.column-slide .section-title {
+  text-align: left;
+}
+#content section.column-slide .column-flow {
+  width: 85%;
+  max-width: 64rem;
+  position: relative;
+  margin: 0 auto 0 auto;
+  overflow-y: scroll;
+  -webkit-column-width: 50vw;
+  -webkit-column-gap: 2em;
+  -moz-column-width: 50vw;
+  -moz-column-gap: 2em;
+  column-width: 50vw;
+  column-gap: 2em;
+  overflow-x: scroll;
+  text-align: justify;
+}
 #content .section-title {
   font-size: 10vh;
   text-align: center;
   margin: 1rem auto;
 }
-#content .section-content {
-  width: 85%;
-  max-width: 64rem;
-  position: relative;
-  margin: 0 auto 0 auto;
+#content .section-content,
+#content .column-flow {
   padding: 1em 0;
 }
-#content .section-content p {
+#content .section-content p,
+#content .column-flow p {
   margin: 0.5em 0;
 }
-#content .section-content p:first-child {
+#content .section-content p:first-child,
+#content .column-flow p:first-child {
   margin-top: 0;
 }
-#content .section-content p:last-child {
+#content .section-content p:last-child,
+#content .column-flow p:last-child {
   margin-bottom: 0;
 }
 #content iframe {
@@ -534,13 +557,4 @@ h6 {
 }
 #colophon {
   text-align: center;
-}
-/* ==========================================================================
-	Section: About
-   ========================================================================== */
-#about {
-  max-width: none !important;
-}
-#about .section-content {
-  width: auto;
 }

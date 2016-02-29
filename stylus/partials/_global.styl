@@ -123,12 +123,11 @@ $updir = '//dev.roundhouse-designs.com/aliewoldt/wp-content/uploads'
 	border-radius $val
 
 
--columns( $w, $gap )
-	-webkit-column-width $w
-	-moz-column-width $w
-	column-width $w
+-column-area( $c, $gap )
+	-webkit-column-width $c
 	-webkit-column-gap $gap
+	-moz-column-width $c
 	-moz-column-gap $gap
+	column-width $c
 	column-gap $gap
-	-moz-column-fill auto
-	column-fill auto
+	overflow-x scroll

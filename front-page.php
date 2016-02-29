@@ -78,19 +78,18 @@ $section_args = array(
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/02/A.-Ewoldt-2.jpg" alt="Ali Ewoldt">
 			</section>
 
-			<section id="about" class="slide">
+			<section id="about" class="column-slide">
 				<?php
 				$section_args['name'] = 'about';
 				$section = get_posts( $section_args );
 				?>
 
-				<h2 class="section-title"><?php echo $section[0]->post_title; ?></h2>
-
-				<div class="section-content">
+				<div class="column-flow">
+					<h2 class="section-title"><?php echo $section[0]->post_title; ?></h2>
 					<?php
-						if ( $section ) {
-							echo apply_filters( 'the_content', $section[0]->post_content );
-						}
+					if ( $section ) {
+						echo apply_filters( 'the_content', $section[0]->post_content );
+					}
 					?>
 				</div>
 			</section>

@@ -51,8 +51,6 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 		$('#content').imagesLoaded(function(){
 			setTotalWidth();
 		});
-
-		//aboutColumnize();
 	}
 
 
