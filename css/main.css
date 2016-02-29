@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 11:06:19 AM on 29-02-2016
+* RHD Dev: Compiled at 11:34:48 AM on 29-02-2016
 ***/
 
 .unselectable {
@@ -367,6 +367,11 @@ img.aligncenter {
     width: 100%;
     height: auto;
   }
+  #main #content section.column-slide .column-flow {
+    -webkit-column-width: 100vw;
+    -moz-column-width: 100vw;
+    column-width: 100vw;
+  }
   #main #content section .section-title {
     font-size: 2.5em;
   }
@@ -504,23 +509,23 @@ h6 {
 }
 #content section.column-slide {
   padding: 4em 2em 1em;
+  overflow: scroll;
 }
 #content section.column-slide .section-title {
   text-align: left;
+  margin-top: 0;
 }
 #content section.column-slide .column-flow {
   width: 85%;
   max-width: 64rem;
   position: relative;
   margin: 0 auto 0 auto;
-  overflow-y: scroll;
-  -webkit-column-width: 50vw;
-  -webkit-column-gap: 2em;
-  -moz-column-width: 50vw;
-  -moz-column-gap: 2em;
-  column-width: 50vw;
-  column-gap: 2em;
-  overflow-x: scroll;
+  -webkit-column-width: 33vw;
+  -webkit-column-gap: 1.6em;
+  -moz-column-width: 33vw;
+  -moz-column-gap: 1.6em;
+  column-width: 33vw;
+  column-gap: 1.6em;
   text-align: justify;
 }
 #content .section-title {
