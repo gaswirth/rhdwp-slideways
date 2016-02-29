@@ -63,7 +63,7 @@
 				);
 				?>
 
-				<h1 id="site-title"><?php bloginfo( 'name' ); ?></h1>
+				<h1 id="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 
 				<div id="rhd-nav-menu">
 					<?php wp_nav_menu( $nav_args ); ?>

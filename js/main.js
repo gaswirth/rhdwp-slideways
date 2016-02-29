@@ -33,7 +33,6 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 
 			//setUnsetMousewheel();
 		});
-
 	});
 
 
@@ -50,6 +49,26 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 
 		$('#content').imagesLoaded(function(){
 			setTotalWidth();
+		});
+
+		$("#site-navigation .menu-item a").on('click', function(e){
+			var elemID = $(this).attr('href'),
+				elemLeft = $(elemID).offset().left,
+				cush = $window.width() * 0.05;
+
+			e.preventDefault();
+
+			$('html, body').animate({
+				scrollLeft: elemLeft - cush
+			});
+		});
+
+		$("#site-title a").on('click', function(e){
+			e.preventDefault();
+
+			$('html, body').animate({
+				scrollLeft: 0
+			});
 		});
 	}
 
