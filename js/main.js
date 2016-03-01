@@ -37,8 +37,6 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 	============================================================================= */
 
 	function rhdInit() {
-		setMousewheel();
-
 		toggleBurger();
 
 		$('#content').imagesLoaded(function(){
@@ -104,14 +102,6 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 			$('html, body').animate({
 				scrollLeft: 0
 			});
-		});
-	}
-
-
-	function setMousewheel() {
-		$('html, body, *').mousewheel(function(e, delta) {
-			e.preventDefault();
-			this.scrollLeft -= (delta * 40);
 		});
 	}
 

@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 4:48:11 PM on 29-02-2016
+* RHD Dev: Compiled at 6:08:58 PM on 01-03-2016
 ***/
 
 /**
@@ -493,19 +493,18 @@ h6 {
   max-width: 100vw;
   height: 100%;
   position: relative;
+  padding-top: 4em;
+  padding-bottom: 1em;
 }
 #content section.slide {
-  padding: 4em 2em 1em;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 #content section.slide .section-content {
   width: 85%;
   max-width: 64rem;
   position: relative;
   margin: 0 auto 0 auto;
-}
-#content section.full-image {
-  padding-top: 0;
-  padding-bottom: 0;
 }
 #content section.full-image img {
   width: auto;

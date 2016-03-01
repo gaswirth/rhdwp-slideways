@@ -137,17 +137,17 @@ h6
 		max-width 100vw
 		height 100%
 		position relative
+		padding-top $nav_ht
+		padding-bottom 1em
 
 		&.slide
-			padding $nav_ht 2em 1em
+			padding-left 2em
+			padding-right 2em
 
 			.section-content
 				-wrapper()
 
 		&.full-image
-			padding-top 0
-			padding-bottom 0
-
 			img
 				width auto
 				height (@height)
