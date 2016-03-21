@@ -23,7 +23,7 @@ $section_args = array(
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-5.jpg" alt="Ali Ewoldt">
 			</section>
 
-			<section id="news" class="slide">
+			<section id="news" class="scrolled-slide">
 				<h2 class="section-title">Latest News</h2>
 				<div class="section-content">
 					<?php
@@ -49,7 +49,7 @@ $section_args = array(
 										if ( $ext_url )
 											echo "<a href='$ext_url'>";
 
-										the_post_thumbnail( 'news-item' );
+										the_post_thumbnail( 'medium' );
 
 										if ( $ext_url )
 											echo '</a>';
@@ -59,7 +59,9 @@ $section_args = array(
 									<div class="news-content">
 										<?php the_content(); ?>
 									</div><!-- .entry-content -->
+
 								</article><!-- #post -->
+								<hr class="news-sep">
 							<?php endif; ?>
 						<?php endforeach; ?>
 						<?php wp_reset_postdata(); ?>
@@ -68,7 +70,7 @@ $section_args = array(
 					<?php endif; ?>
 				</div>
 
-				<div class="news-scroller">
+				<div class="news-pager">
 					<a id="next" href="#"></a>
 					<a id="prev" href="#"></a>
 				</div>
@@ -78,13 +80,13 @@ $section_args = array(
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-3.jpg" alt="Ali Ewoldt">
 			</section>
 
-			<section id="about" class="column-slide">
+			<section id="about" class="scroller">
 				<?php
 				$section_args['name'] = 'about';
 				$section = get_posts( $section_args );
 				?>
 
-				<div class="column-flow">
+				<div class="section-content">
 					<h2 class="section-title"><?php echo $section[0]->post_title; ?></h2>
 					<?php
 					if ( $section ) {
@@ -130,12 +132,9 @@ $section_args = array(
 				<div class="section-content">
 					<?php
 						if ( $section ) {
-							if ( function_exists( 'soliloquy' ) ) { soliloquy( '91' ); }
-							//echo apply_filters( 'the_content', $section[0]->post_content );
+							echo apply_filters( 'the_content', $section[0]->post_content );
 						}
 					?>
-
-					<?php if ( function_exists( 'soliloquy' ) ) { soliloquy( 'media-slider', 'slug' ); } ?>
 				</div>
 			</section>
 
@@ -143,7 +142,7 @@ $section_args = array(
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-4.jpg" alt="Ali Ewoldt">
 			</section>
 
-			<section id="video" class="slide">
+			<section id="video" class="scrolled-slide">
 				<?php
 				$section_args['name'] = 'video';
 				$section = get_posts( $section_args );

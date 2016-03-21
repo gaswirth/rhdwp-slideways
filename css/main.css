@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 3:57:36 PM on 21-03-2016
+* RHD Dev: Compiled at 6:17:03 PM on 21-03-2016
 ***/
 
 .unselectable {
@@ -345,7 +345,7 @@ img.aligncenter {
     height: auto !important;
   }
   #main {
-    margin-top: 4em;
+    margin-top: $nav_ht;
   }
   #main #content section {
     float: none;
@@ -484,25 +484,25 @@ h6 {
   color: #acc3fe;
 }
 #content section {
+  width: auto;
+  max-width: 100vw;
+  height: 96%;
+  position: relative;
+  top: 4em;
+  overflow-y: auto;
   float: left;
   display: inline-block;
 }
-#content section {
-  width: auto;
-  max-width: 100vw;
-  height: 100%;
-  position: relative;
-  overflow-y: auto;
-}
-#content section.slide {
-  padding: 4em 2em 1em;
-}
-#content section.slide .section-content {
+#content section.slide .section-content,
+#content section.scrolled-slide .section-content {
   width: 85%;
   max-width: 64rem;
   position: relative;
   margin: 0 auto 0 auto;
   padding: 1em 0;
+}
+#content section.slide {
+  padding: 1em 2em 2em 2em;
 }
 #content section.full-image {
   padding-top: 0;
@@ -512,16 +512,17 @@ h6 {
   width: auto;
   height: 100%;
 }
-#content section.column-slide {
-  width: 35vw;
-  padding: 4em 5vw 2em;
+#content section.scrolled-slide {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 1em;
 }
-#content section.column-slide .section-title {
-  text-align: left;
+#content section.scrolled-slide .entry-title {
   margin-top: 0;
 }
 #content .section-title {
-  font-size: 10vh;
+  font-size: 5vh;
   text-align: center;
   margin: 1rem auto;
 }
@@ -534,9 +535,13 @@ h6 {
 #content .section-content p:last-child {
   margin-bottom: 0;
 }
-#content iframe {
+#content .section-content iframe,
+#content .section-content img {
   max-width: 100%;
   display: block;
+}
+#content .section-content img {
+  height: auto;
 }
 #rhd-logo-footer {
   width: 1.35em;
@@ -551,9 +556,36 @@ h6 {
 /* ==========================================================================
 	Section Specifics
    ========================================================================== */
-#news .news-header img {
+#content #news {
+  color: #fff;
+  background-color: #a6a1c9;
+}
+#content #news .section-content {
+  width: 100%;
+  max-width: initial;
+}
+#content #news .news-sep {
+  width: 85%;
+  max-width: 64rem;
+  position: relative;
+  margin: 3em auto 3em auto;
+  height: 1px;
+  background: #acc3fe;
+}
+#content #news .news-sep:last-of-type {
+  display: none;
+}
+#content #news .news-header img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
   display: block;
-  margin: 1em auto 0.5em;
+  margin: 1em auto;
+  border: 1px solid #361f4b;
+}
+#content #about {
+  width: 35vw;
+  padding: 4em 5vw 2em;
 }
 #content #contact .section-content {
   max-height: 100%;
@@ -567,4 +599,15 @@ h6 {
   margin: 0 2em;
   vertical-align: middle;
   text-align: center;
+}
+/* ==========================================================================
+	Media Queries
+   ========================================================================== */
+@media screen and (min-width: 40em) {
+  #content #news {
+    width: 40vw;
+  }
+  #content #news .news-sep {
+    width: 75%;
+  }
 }
