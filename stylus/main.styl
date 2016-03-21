@@ -129,41 +129,38 @@ h6
 	-clearfix()
 
 	section
-	figure
 		float left
+		display inline-block
 
 	section
 		width auto
 		max-width 100vw
 		height 100%
 		position relative
-		padding-top $nav_ht
-		padding-bottom 1em
+		overflow-y auto
 
 		&.slide
-			padding-left 2em
-			padding-right 2em
+			padding $nav_ht 2em 1em
 
 			.section-content
 				-wrapper()
+				padding 1em 0
 
 		&.full-image
+			padding-top 0
+			padding-bottom 0
+
 			img
 				width auto
 				height (@height)
 
 		&.column-slide
-			padding $nav_ht 2em 1em
-			overflow scroll
+			width 35vw
+			padding $nav_ht 5vw 2em
 
 			.section-title
 				text-align left
 				margin-top 0
-
-			.column-flow
-				-wrapper()
-				-column-area( 33vw, 1.6em )
-				text-align justify
 
 	.section-title
 		font-size 10vh
@@ -171,9 +168,6 @@ h6
 		margin 1rem auto
 
 	.section-content
-	.column-flow
-		padding 1em 0
-
 		p
 			margin 0.5em 0
 
@@ -201,12 +195,16 @@ h6
 
 
 /* ==========================================================================
-	Content Areas
+	Section Specifics
    ========================================================================== */
 
-#contact
-	.section-content
-		display table
+#content
+	#contact
+		.section-content
+			height 100%
+			-unwrapper()
 
-		.contact-area
-			display table-cell
+			.contact-area
+				height 100%
+				display inline-block
+				margin 0 2em
