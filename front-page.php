@@ -20,7 +20,7 @@ $section_args = array(
 		<div id="content" role="main">
 
 			<section id="full-1" class="full-image">
-				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/02/A.-Ewoldt-1.jpg" alt="Ali Ewoldt">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-5.jpg" alt="Ali Ewoldt">
 			</section>
 
 			<section id="news" class="slide">
@@ -75,7 +75,7 @@ $section_args = array(
 			</section>
 
 			<section id="full-2" class="full-image">
-				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/02/A.-Ewoldt-2.jpg" alt="Ali Ewoldt">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-3.jpg" alt="Ali Ewoldt">
 			</section>
 
 			<section id="about" class="column-slide">
@@ -95,7 +95,7 @@ $section_args = array(
 			</section>
 
 			<section id="full-3" class="full-image">
-				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/02/A.-Ewoldt-3.jpg" alt="Ali Ewoldt">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-1.jpg" alt="Ali Ewoldt">
 			</section>
 
 			<section id="resume" class="slide">
@@ -116,12 +116,12 @@ $section_args = array(
 			</section>
 
 			<section id="full-4" class="full-image">
-				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/02/A.-Ewoldt-4.jpg" alt="Ali Ewoldt">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-2.jpg" alt="Ali Ewoldt">
 			</section>
 
-			<section id="media" class="slide">
+			<section id="photos" class="slide">
 				<?php
-				$section_args['name'] = 'media';
+				$section_args['name'] = 'photos';
 				$section = get_posts( $section_args );
 				?>
 
@@ -140,7 +140,28 @@ $section_args = array(
 			</section>
 
 			<section id="full-5" class="full-image">
-				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/02/A.-Ewoldt-5.jpg" alt="Ali Ewoldt">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-4.jpg" alt="Ali Ewoldt">
+			</section>
+
+			<section id="video" class="slide">
+				<?php
+				$section_args['name'] = 'video';
+				$section = get_posts( $section_args );
+				?>
+
+				<h2 class="section-title"><?php echo $section[0]->post_title; ?></h2>
+
+				<div class="section-content">
+					<?php
+						if ( $section ) {
+							echo apply_filters( 'the_content', $section[0]->post_content );
+						}
+					?>
+				</div>
+			</section>
+
+			<section id="full-6" class="full-image">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-1.jpg" alt="Ali Ewoldt">
 			</section>
 
 			<section id="contact" class="slide">

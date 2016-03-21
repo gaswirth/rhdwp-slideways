@@ -1,5 +1,9 @@
 /***
+<<<<<<< HEAD
 * RHD Dev: Compiled at 6:08:58 PM on 01-03-2016
+=======
+* RHD Dev: Compiled at 2:22:20 PM on 21-03-2016
+>>>>>>> aliewoldt
 ***/
 
 /**
@@ -565,6 +569,12 @@ h6 {
 }
 #colophon {
   text-align: center;
+}
+#contact .section-content {
+  display: table;
+}
+#contact .section-content .contact-area {
+  display: table-cell;
 }
 /* Add overwrites as needed so that the content of the editor field is attractive and not broken */
 html,
