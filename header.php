@@ -20,24 +20,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=9" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<!--
-									   _  _
-                                      | || |
-         ____  ___   _   _  ____    _ | || | _    ___   _   _   ___   ____
-        / ___)/ _ \ | | | ||  _ \  / || || || \  / _ \ | | | | /___) / _  )
-       | |   | |_| || |_| || | | |( (_| || | | || |_| || |_| ||___ |( (/ /
-       |_|    \___/  \____||_| |_| \____||_| |_| \___/  \____|(___/  \____)
-
-                                     _               _
-                                    | |             (_)
-                                  _ | |  ____   ___  _   ____  ____    ___
-                                 / || | / _  ) /___)| | / _  ||  _ \  /___)
-                                ( (_| |( (/ / |___ || |( ( | || | | ||___ |
-                                 \____| \____)(___/ |_| \_|| ||_| |_|(___/
-                                                       (_____|
-
-		-->
-
 		<title><?php wp_title(); ?></title>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -50,6 +32,13 @@
 		<!--[if lt IE 7]>
 			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="//browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
+
+		<div id="loader">
+			<div class="center">
+				<img src="<?php echo RHD_IMG_DIR; ?>/loader.gif" alt="Loading">
+				<p>One moment, please...</p>
+			</div>
+		</div>
 
 		<div id="page" class="hfeed site">
 			<header id="masthead" class="full-bg">

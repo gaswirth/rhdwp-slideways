@@ -56,13 +56,11 @@ function rhd_enqueue_scripts()
 {
 	wp_register_script( 'rhd-plugins', RHD_THEME_DIR . '/js/plugins.js', array( 'jquery' ), null, true );
 	wp_register_script( 'imagesloaded', RHD_THEME_DIR . '/js/vendor/imagesloaded/imagesloaded.pkgd.min.js', array( 'jquery' ), null, true );
-	wp_register_script( 'jquery.columnizer', RHD_THEME_DIR . '/js/vendor/jquery.columnizer/src/jquery.columnizer.min.js', array(), null, true );
 
 	$main_deps = array(
 		'rhd-plugins',
 		'jquery',
 		'imagesloaded',
-		'jquery.columnizer',
 	);
 
 	wp_register_script( 'rhd-main', RHD_THEME_DIR . '/js/main.js', $main_deps, null, true );
@@ -462,22 +460,25 @@ add_action( 'template_redirect', 'rhd_redirect_post' );
  * rhd_archive_pagination function.
  *
  * @access public
+ * @param WP_Query $q (default: null)
  * @return void
  */
-function rhd_archive_pagination()
+function rhd_archive_pagination( WP_Query $q = null )
 {
+	$max_page = ( $q ) ? $q->max_num_pages : null;
+
 	$sep = ( get_previous_posts_link() != '' ) ? '<div class="pag-sep"></div>' : null;
 
-	echo '<div class="pagination">';
+	echo '<nav class="pagination">';
 
-	echo '<span class="pag-next">' . next_posts_link( '&larr; Older', null ) . '</span>';
+	echo '<span class="pag-next">' . get_next_posts_link( '&larr; Older', $max_page ) . '</span>';
 
 	if ( $sep ) {
 		echo '<div class="pag-sep"></div>';
 	}
 
-	echo '<span class="pag-prev">' . previous_posts_link( 'Newer &rarr;', null ) . '</span>';
-	echo '</div>';
+	echo '<span class="pag-prev">' . get_previous_posts_link( 'Newer &rarr;' ) . '</span>';
+	echo '</nav>';
 }
 
 

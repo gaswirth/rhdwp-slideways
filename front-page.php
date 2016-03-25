@@ -26,53 +26,39 @@ $section_args = array(
 			<section id="news" class="scrolled-slide">
 				<h2 class="section-title">Latest News</h2>
 				<div class="section-content">
-					<?php
-					$news_args = array(
-						'post_type'			=> 'post',
-						'post_status'		=> 'publish',
-						'posts_per_page'	=> 12
-					);
+					<?php if ( have_posts() ) : ?>
+						<div class="news-entries">
+							<?php while ( have_posts() ) : the_post(); ?>
+								<?php if ( has_post_thumbnail() ) : ?>
+									<article id="news-<?php the_ID(); ?>" <?php post_class( 'news-entry' ); ?>>
 
-					$news = get_posts( $news_args );
-					?>
+										<?php $ext_url = esc_url( get_post_meta( get_the_ID(), '_ext-link', true ) ); ?>
 
-					<?php if ( $news ) : ?>
-						<div class="news-entries slideshow">
-						<?php foreach( $news as $post ) : setup_postdata( $post ); ?>
-							<?php if ( has_post_thumbnail() ) : ?>
-								<article id="news-<?php the_ID(); ?>" <?php post_class( 'news-entry' ); ?>>
+										<header class="news-header">
+											<?php
+											if ( $ext_url )
+												echo "<a href='$ext_url'>";
 
-									<?php $ext_url = esc_url( get_post_meta( get_the_ID(), '_ext-link', true ) ); ?>
+											the_post_thumbnail( 'medium' );
 
-									<header class="news-header">
-										<?php
-										if ( $ext_url )
-											echo "<a href='$ext_url'>";
+											if ( $ext_url )
+												echo '</a>';
+											?>
+										</header><!-- .entry-header -->
 
-										the_post_thumbnail( 'medium' );
+										<div class="news-content">
+											<?php the_content(); ?>
+										</div><!-- .entry-content -->
 
-										if ( $ext_url )
-											echo '</a>';
-										?>
-									</header><!-- .entry-header -->
+									</article><!-- #post -->
+									<hr class="news-sep">
+								<?php endif; ?>
+						<?php endwhile; ?>
 
-									<div class="news-content">
-										<?php the_content(); ?>
-									</div><!-- .entry-content -->
-
-								</article><!-- #post -->
-								<hr class="news-sep">
-							<?php endif; ?>
-						<?php endforeach; ?>
-						<?php wp_reset_postdata(); ?>
+						<?php rhd_archive_pagination(); ?>
 
 						</div><!-- .news-entries -->
 					<?php endif; ?>
-				</div>
-
-				<div class="news-pager">
-					<a id="next" href="#"></a>
-					<a id="prev" href="#"></a>
 				</div>
 			</section>
 
@@ -80,7 +66,7 @@ $section_args = array(
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-3.jpg" alt="Ali Ewoldt">
 			</section>
 
-			<section id="about" class="scroller">
+			<section id="about" class="scrolled-slide">
 				<?php
 				$section_args['name'] = 'about';
 				$section = get_posts( $section_args );
@@ -163,7 +149,7 @@ $section_args = array(
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-1.jpg" alt="Ali Ewoldt">
 			</section>
 
-			<section id="contact" class="slide">
+			<section id="contact" class="scrolled-slide">
 				<?php
 				$section_args['name'] = 'contact';
 				$section = get_posts( $section_args );

@@ -30,8 +30,6 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 			orient = getOrient();
 
 			setTotalWidth();
-
-			//setUnsetMousewheel();
 		});
 	});
 
@@ -41,15 +39,32 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 	============================================================================= */
 
 	function rhdInit() {
-		//setUnsetMousewheel();
-
 		toggleBurger();
 
 		orient = getOrient();
 
-		$('#content').imagesLoaded(function(){
-			setTotalWidth();
+		var numSections = $("#content section").length;
+		var i = 0;
+
+		$('#content section').each(function(){
+			$(this).imagesLoaded(function(){
+				i++;
+			});
 		});
+
+		console.log(numSections);
+
+		var interval = setInterval( function(){
+			if ( i == numSections ) {
+				clearInterval(interval);
+				setTotalWidth();
+				$('#hamburger').fadeIn('slow', function(){
+					$('#loader').fadeOut('slow');
+				});
+				return;
+			}
+		},
+		100);
 
 		$("#site-navigation .menu-item a").on('click', function(e){
 			var elemID = $(this).attr('href'),
@@ -70,15 +85,6 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 				scrollLeft: 0
 			});
 		});
-
-/*
-		$('.column-slide').each(function(){
-			$(this).children('.section-content').columnize({
-				width: 400,
-				height: $(this).height()
-			});
-		});
-*/
 	}
 
 
@@ -104,31 +110,7 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 		w=w+2; // Safety pixel
 
 		$('html, body').width(w);
-	}
-
-
-	function setUnsetMousewheel() {
-		if ( orient == 'land' && mw === false ) {
-			mousewheelOn();
-			mw = true;
-		} else if ( orient == 'port' && mw === true ) {
-			mousewheelOff();
-			mw = false;
-		}
-	}
-
-
-	function mousewheelOn() {
-		$('html, body, *').mousewheel(function(e, delta) {
-			e.preventDefault();
-			this.scrollLeft -= (delta * 40);
-		});
-	}
-
-	function mousewheelOff() {
-		$('html, body, *').mousewheel(function(e, delta) {
-			// Nothing to see here...
-		});
+		$('body').addClass('h-sized');
 	}
 
 
