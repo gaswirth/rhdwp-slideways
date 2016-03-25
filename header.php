@@ -35,7 +35,7 @@
 
 		<div id="loader">
 			<div class="center">
-				<img src="<?php echo RHD_IMG_DIR; ?>/loader.gif" alt="Loading">
+				<img src="<?php echo home_url( '/wp-content/uploads/2016/03/loader.gif'); ?>" alt="Loading">
 				<p>One moment, please...</p>
 			</div>
 		</div>
