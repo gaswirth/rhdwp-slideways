@@ -30,6 +30,7 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 			orient = getOrient();
 
 			setTotalWidth();
+			// rhdSoliloquySize();
 		});
 	});
 
@@ -51,8 +52,6 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 				i++;
 			});
 		});
-
-		console.log(numSections);
 
 		var interval = setInterval( function(){
 			if ( i == numSections ) {
@@ -85,6 +84,8 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 				scrollLeft: 0
 			});
 		});
+
+		// rhdSoliloquySize();
 	}
 
 
@@ -124,6 +125,13 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 			$("#rhd-nav-menu").slideToggle();
 		});
 	}
+
+/*
+
+	function rhdSoliloquySize() {
+		$("#soliloquy-37").height( $(window).height() * 0.7 );
+	}
+*/
 
 
 })(jQuery);

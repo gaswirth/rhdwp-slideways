@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 10:39:31 AM on 25-03-2016
+* RHD Dev: Compiled at 3:15:38 PM on 25-03-2016
 ***/
 
 /**
@@ -615,7 +615,10 @@ h6 {
 #content #about {
   width: 35vw;
 }
-#contact .section-content .contact-area {
+#content #photos #soliloquy-37 img {
+  max-height: 100%;
+}
+#content #contact .section-content .contact-area {
   margin: 1em auto;
   text-align: center;
 }
