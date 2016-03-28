@@ -34,8 +34,6 @@ define( 'DISALLOW_FILE_EDIT', true );
 
 function rhd_enqueue_styles()
 {
-	global $theme_opts;
-
 	wp_register_style( 'rhd-main', RHD_THEME_DIR . '/css/main.css', array(), '1', 'all' );
 	wp_register_style( 'rhd-enhanced', RHD_THEME_DIR . '/css/enhanced.css', array(), '1', 'all' );
 	wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700,400italic' );
