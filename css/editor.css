@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 9:53:45 PM on 29-03-2016
+* RHD Dev: Compiled at 3:01:14 AM on 30-03-2016
 ***/
 
 /**
@@ -631,10 +631,6 @@ input[type="button"]:active {
   position: relative;
   bottom: 0.2em;
 }
-#content #news {
-  background: url("../img/arches.png") repeat;
-  color: #fff;
-}
 #content #news .news-sep {
   width: 85%;
   max-width: 64rem;
@@ -645,11 +641,6 @@ input[type="button"]:active {
 }
 #content #news .news-sep:last-of-type {
   display: none;
-}
-#content #news .news-entry {
-  background-color: rgba(54,31,75,0.25);
-  padding: 0.25em 0.5em;
-  border-radius: 0.1em;
 }
 #content #news .news-header img {
   width: 100%;
