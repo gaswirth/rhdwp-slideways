@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 9:28:39 PM on 29-03-2016
+* RHD Dev: Compiled at 9:30:14 PM on 29-03-2016
 ***/
 
 .unselectable {
@@ -656,6 +656,12 @@ input[type="button"]:active {
   display: block;
   margin: 1em auto;
   border: 1px solid #361f4b;
+}
+#content #photos .section-content {
+  width: 95%;
+  max-width: 64rem;
+  position: relative;
+  margin: 0 auto 0 auto;
 }
 #content #photos .gallery .gallery-item-sizer,
 #content #photos .gallery .gallery-item {
