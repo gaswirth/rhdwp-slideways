@@ -200,7 +200,7 @@ input
 		&.slide
 		&.scrolled-slide
 		&.full-slide
-			min-width 40vw
+			min-width 60vw
 
 			.section-content
 				-wrapper()
@@ -315,6 +315,7 @@ input
 				max-width none
 				padding 0
 				overflow hidden
+				cursor pointer
 
 				.gallery-caption
 					position absolute
@@ -345,6 +346,8 @@ input
 						color white
 
 	#contact
+		padding-bottom 1em
+
 		.section-content
 			.contact-area
 				margin 1em auto
@@ -355,7 +358,7 @@ input
 	Media Queries
    ========================================================================== */
 
-@media screen and (min-width 40em)
+@media screen and (min-width 32rem) and (orientation landscape)
 	#rhd-nav-menu
 		width 15em
 		background $color3

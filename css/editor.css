@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 8:18:42 PM on 29-03-2016
+* RHD Dev: Compiled at 9:13:31 PM on 29-03-2016
 ***/
 
 /**
@@ -354,7 +354,6 @@ img.aligncenter {
   #main #content section {
     float: none;
     display: block;
-    padding: 0;
   }
   #main #content section.slide {
     width: 90%;
@@ -555,7 +554,7 @@ input[type="button"]:active {
 #content section.slide,
 #content section.scrolled-slide,
 #content section.full-slide {
-  min-width: 40vw;
+  min-width: 60vw;
 }
 #content section.slide .section-content,
 #content section.scrolled-slide .section-content,
@@ -666,6 +665,7 @@ input[type="button"]:active {
   max-width: none;
   padding: 0;
   overflow: hidden;
+  cursor: pointer;
 }
 #content #photos .gallery .gallery-item .gallery-caption {
   position: absolute;
@@ -695,11 +695,14 @@ input[type="button"]:active {
   visibility: visible;
   color: #fff;
 }
+#content #contact {
+  padding-bottom: 1em;
+}
 #content #contact .section-content .contact-area {
   margin: 1em auto;
   text-align: center;
 }
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 32rem) and (orientation: landscape) {
   #rhd-nav-menu {
     width: 15em;
     background: #361f4b;
