@@ -282,8 +282,8 @@ input
 
 #content
 	#news
-		.section-content
-			-unwrapper()
+		background url(../img/arches.png) repeat
+		color white
 
 		.news-sep
 			-wrapper(3em, 3em, 85%)
@@ -293,11 +293,16 @@ input
 			&:last-of-type
 				display none
 
+		.news-entry
+			background-color $color3-trans-more
+			padding 0.25em 0.5em
+			border-radius 0.1em
+
 		.news-header
 			img
 				width 100%
 				height auto
-				max-width 300px
+				max-width 400px
 				display block
 				margin 1em auto
 				border 1px solid $color3

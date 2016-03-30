@@ -169,7 +169,7 @@ add_theme_support( 'automatic-feed-links' );
 
 function rhd_image_sizes()
 {
-	add_image_size( 'news-item', 300, 300, true );
+	add_image_size( 'news-item', 400, '', true );
 	add_image_size( 'gallery-item', 500 );
 }
 add_action( 'after_setup_theme', 'rhd_image_sizes' );

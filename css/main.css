@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 9:30:14 PM on 29-03-2016
+* RHD Dev: Compiled at 9:53:45 PM on 29-03-2016
 ***/
 
 .unselectable {
@@ -634,9 +634,9 @@ input[type="button"]:active {
 /* ==========================================================================
 	Section Specifics
    ========================================================================== */
-#content #news .section-content {
-  width: 100%;
-  max-width: initial;
+#content #news {
+  background: url("../img/arches.png") repeat;
+  color: #fff;
 }
 #content #news .news-sep {
   width: 85%;
@@ -649,10 +649,15 @@ input[type="button"]:active {
 #content #news .news-sep:last-of-type {
   display: none;
 }
+#content #news .news-entry {
+  background-color: rgba(54,31,75,0.25);
+  padding: 0.25em 0.5em;
+  border-radius: 0.1em;
+}
 #content #news .news-header img {
   width: 100%;
   height: auto;
-  max-width: 300px;
+  max-width: 400px;
   display: block;
   margin: 1em auto;
   border: 1px solid #361f4b;
