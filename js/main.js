@@ -10,7 +10,8 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 	isMobile = ( $body.hasClass('mobile') === true ) ? true : false,
 	isTablet = ( $body.hasClass('tablet') === true ) ? true : false;
 
-// Site Data object: siteData
+	var $gallery = jQuery("#photos .gallery"),
+	$gridItem = jQuery("#photos .gallery .gallery-item");
 
 
 /* ==========================================================================
@@ -30,7 +31,6 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 			orient = getOrient();
 
 			setTotalWidth();
-			// rhdSoliloquySize();
 		});
 	});
 
@@ -85,7 +85,7 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 			});
 		});
 
-		// rhdSoliloquySize();
+		rhdPackery();
 	}
 
 
@@ -126,12 +126,27 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 		});
 	}
 
-/*
 
-	function rhdSoliloquySize() {
-		$("#soliloquy-37").height( $(window).height() * 0.7 );
+	function rhdPackery() {
+		$gallery.imagesLoaded(function(){
+			$gallery.packery({
+				columnWidth: '.gallery-item-sizer',
+				gutter: '.gutter-sizer',
+				itemSelector: '.gallery-item',
+				percentPosition: true
+			});
+		});
+
+		$gallery.on('click', '.gallery-item', function(event){
+			var $item = $(event.currentTarget);
+			$item.toggleClass('gigante');
+
+			if ( $item.is('.gigante') ){
+				$gallery.packery( 'fit', event.currentTarget, 0 );
+			} else {
+				$gallery.packery('shiftLayout');
+			}
+		});
 	}
-*/
-
 
 })(jQuery);

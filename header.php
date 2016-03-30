@@ -56,6 +56,7 @@
 
 				<div id="rhd-nav-menu">
 					<?php wp_nav_menu( $nav_args ); ?>
+					<?php echo do_shortcode( '[rhd-social-icons facebook="https://www.facebook.com/aliewoldt" twitter="aliewoldt" instagram="aliewoldt" color1="#fff" color2="#fff" widget_id="1"]' ); ?>
 				</div>
 
 				<button id="hamburger" class="c-hamburger c-hamburger--htx">

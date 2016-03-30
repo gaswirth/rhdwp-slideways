@@ -28,13 +28,13 @@ body
 
 a
 	outline 0 !important
-	color $color2
+	color $color3
 	text-decoration none
 	transition color 0.25s
 
 	&:hover
 	&:active
-		color $color3
+		color $color2
 
 
 h1
@@ -52,7 +52,7 @@ input
 		padding 0.5em 1em
 		font-size 1.1em
 		background $color3
-		color $color2
+		color white
 		transition all 0.25s
 		text-align center
 		border none
@@ -129,14 +129,15 @@ input
 	z-index 999
 
 	#site-title
-		font-size 2.8em
+		font-size 3.6em
 		margin 0
 		position absolute
-		top 50%
+		top 57%
 		left 2rem
 		-transform(translateY(-50%))
 		line-height 1
 		color white
+		font-family $ff-title
 
 		a
 			color inherit
@@ -151,12 +152,12 @@ input
 
 
 #rhd-nav-menu
-	background $color3
+	background $color3-trans
 	position absolute
 	display none
 	right 0
 	top $nav-ht
-	text-align right
+	text-align center
 
 	#site-navigation
 		padding-left 0
@@ -175,6 +176,14 @@ input
 				&:active
 					color $color2
 
+	.widget-rhd-social-icons
+		-wrapper(0.5em, 1.5em, 70%)
+
+		.widget-title
+			@extends .invisible
+
+		.rhd-social-icon
+			width 31%
 
 #content
 	-clearfix()
@@ -184,13 +193,13 @@ input
 		max-width 100vw
 		height $section-ht
 		position relative
-		top $nav-ht
 		overflow auto
 		float left
 		display inline-block
 
 		&.slide
 		&.scrolled-slide
+		&.full-slide
 			min-width 40vw
 
 			.section-content
@@ -200,25 +209,29 @@ input
 		&.slide
 			padding 1em 2em 2em 2em
 
-		&.full-image
+		&.image-sep
 			padding-top 0
 			padding-bottom 0
 
 			img
-				width auto
-				height 100%
+				width 100%
+				height auto
 
 		&.scrolled-slide
 			position relative
-			padding 2em
+			padding 2em 2em 4em 2em
 
 			.entry-title
 				margin-top 0
 
+		&.full-slide
+			padding 0
+
 	.section-title
-		font-size 5vh
+		font-size 7vh
 		text-align center;
-		margin 1rem auto
+		margin 1rem auto 0.5rem auto
+		font-family $ff-title
 
 	.section-content
 		p
@@ -233,7 +246,6 @@ input
 		iframe
 		img
 			max-width 100%
-			display block
 
 		img
 			height auto
@@ -249,6 +261,19 @@ input
 
 #colophon
 	text-align center
+	margin 2em 0
+	padding-top 1em
+	border-top 1px solid $color2
+
+	.site-info
+		font-size 0.9em
+
+	#rhd-logo-footer
+		width 1.2em
+		height 1.2em
+		display inline-block
+		position relative
+		bottom 0.2em
 
 
 /* ==========================================================================
@@ -277,8 +302,47 @@ input
 				margin 1em auto
 				border 1px solid $color3
 
-	#about
-		width 35vw
+	#photos
+		.gallery
+			.gallery-item-sizer
+			.gallery-item
+				width 49%
+
+			.gutter-sizer
+				width 1%
+
+			.gallery-item
+				max-width none
+				padding 0
+				overflow hidden
+
+				.gallery-caption
+					position absolute
+					display inline
+					left 0
+					top 999px
+					transition all 0.5s ease-out
+					visibility hidden
+
+				&.gigante
+					width 100%
+					height auto
+
+					img
+						width 100%
+						height auto
+
+					.gallery-caption
+						width 100%
+						padding 1em
+						font-size 1.1em
+						text-align left
+						font-family $ff-body
+						background rgba(0,0,0,0.5)
+						top initial
+						bottom 0
+						visibility visible
+						color white
 
 	#contact
 		.section-content
@@ -292,9 +356,32 @@ input
    ========================================================================== */
 
 @media screen and (min-width 40em)
+	#rhd-nav-menu
+		width 15em
+		background $color3
+
 	#content
+		section
+			top $nav-ht
+
+			&.image-sep
+				img
+					width auto
+					height 100%
+
 		#news
 			width 40vw
 
 			.news-sep
 				width 75%
+
+		#about
+			width 35vw
+
+		#photos
+			width 70vw
+
+			.gallery
+				.gallery-item-sizer
+				.gallery-item
+					width 32.665%

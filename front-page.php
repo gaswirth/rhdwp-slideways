@@ -19,7 +19,7 @@ $section_args = array(
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 
-			<section id="full-1" class="full-image">
+			<section id="full-1" class="image-sep">
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-5.jpg" alt="Ali Ewoldt">
 			</section>
 
@@ -62,7 +62,7 @@ $section_args = array(
 				</div>
 			</section>
 
-			<section id="full-2" class="full-image">
+			<section id="full-2" class="image-sep">
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-3.jpg" alt="Ali Ewoldt">
 			</section>
 
@@ -82,7 +82,7 @@ $section_args = array(
 				</div>
 			</section>
 
-			<section id="full-3" class="full-image">
+			<section id="full-3" class="image-sep">
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-1.jpg" alt="Ali Ewoldt">
 			</section>
 
@@ -103,11 +103,11 @@ $section_args = array(
 				</div>
 			</section>
 
-			<section id="full-4" class="full-image">
+			<section id="full-4" class="image-sep">
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-2.jpg" alt="Ali Ewoldt">
 			</section>
 
-			<section id="photos" class="slide">
+			<section id="photos" class="scrolled-slide">
 				<?php
 				$section_args['name'] = 'photos';
 				$section = get_posts( $section_args );
@@ -124,7 +124,7 @@ $section_args = array(
 				</div>
 			</section>
 
-			<section id="full-5" class="full-image">
+			<section id="full-5" class="image-sep">
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-4.jpg" alt="Ali Ewoldt">
 			</section>
 
@@ -145,7 +145,7 @@ $section_args = array(
 				</div>
 			</section>
 
-			<section id="full-6" class="full-image">
+			<section id="full-6" class="image-sep">
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/03/A.-Ewoldt-2016-1.jpg" alt="Ali Ewoldt">
 			</section>
 
@@ -163,6 +163,16 @@ $section_args = array(
 							echo apply_filters( 'the_content', $section[0]->post_content );
 						}
 					?>
+
+					<footer id="colophon">
+						<div class="site-info">
+							<p>
+								<?php echo '&copy;' . date( 'Y' ); ?> <?php echo bloginfo( 'name' ); ?><br />
+								Photography by <a href="//billybphotography.com" target="_blank">Billy Bustamante</a><br />
+								Site by <a href="//roundhouse-designs.com" target="_blank">Roundhouse<img id="rhd-logo-footer" src="//assets.roundhouse-designs.com/images/rhd-black-house.png" alt="Roundhouse Designs">Designs</a>
+							</p>
+						</div><!-- .site-info -->
+					</footer>
 				</div>
 			</section>
 
