@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 9:13:31 PM on 29-03-2016
+* RHD Dev: Compiled at 9:28:39 PM on 29-03-2016
 ***/
 
 .unselectable {
@@ -618,7 +618,7 @@ input[type="button"]:active {
 #colophon {
   text-align: center;
   margin: 2em 0;
-  padding-top: 1em;
+  padding-top: 2em;
   border-top: 1px solid #acc3fe;
 }
 #colophon .site-info {
