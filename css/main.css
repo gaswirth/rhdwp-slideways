@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 3:01:14 AM on 30-03-2016
+* RHD Dev: Compiled at 11:10:58 PM on 13-06-2016
 ***/
 
 .unselectable {
@@ -399,7 +399,7 @@ a {
 }
 a:hover,
 a:active {
-  color: #acc3fe;
+  color: #924115;
 }
 h1,
 h2,
@@ -422,7 +422,7 @@ input[type="button"] {
 }
 input[type="button"]:hover,
 input[type="button"]:active {
-  background: #acc3fe;
+  background: #924115;
   color: #361f4b;
 }
 #loader {
@@ -531,7 +531,7 @@ input[type="button"]:active {
 }
 #rhd-nav-menu #site-navigation .menu-item a:hover,
 #rhd-nav-menu #site-navigation .menu-item a:active {
-  color: #acc3fe;
+  color: #924115;
 }
 #rhd-nav-menu .widget-rhd-social-icons {
   width: 70%;
@@ -619,7 +619,7 @@ input[type="button"]:active {
   text-align: center;
   margin: 2em 0;
   padding-top: 2em;
-  border-top: 1px solid #acc3fe;
+  border-top: 1px solid #924115;
 }
 #colophon .site-info {
   font-size: 0.9em;
@@ -640,7 +640,7 @@ input[type="button"]:active {
   position: relative;
   margin: 3em auto 3em auto;
   height: 1px;
-  background: #acc3fe;
+  background: #924115;
 }
 #content #news .news-sep:last-of-type {
   display: none;

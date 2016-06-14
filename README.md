@@ -1,3 +1,0 @@
-rhdwp-slideways
-=======
-Slideways theme
