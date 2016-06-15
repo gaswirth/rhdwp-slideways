@@ -107,8 +107,12 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 				w += parseInt($this.width(), 10) + parseInt($this.css('paddingLeft'), 10) + parseInt($this.css('paddingRight'), 10);
 			});
 		}
+		
+		scrolledCt = $('.scrolled-slide').length;
+		borders = parseInt($('.scrolled-slide').css('borderLeftWidth')) * 2;
+		borderTtl = borders * scrolledCt;
 
-		w=w+2; // Safety pixel
+		w = w + borderTtl + 1; // Allow for borders, plus pixel
 
 		$('html, body').width(w);
 		$('body').addClass('h-sized');

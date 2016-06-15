@@ -21,6 +21,7 @@ $section_args = array(
 
 			<section id="full-1" class="image-sep">
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-1.jpg" alt="Ali Ewoldt">
+				<div class="scroll-text">Scroll &rarr;</div>
 			</section>
 
 			<section id="actress" class="scrolled-slide">
@@ -82,7 +83,7 @@ $section_args = array(
 			</section>
 
 			<section id="full-4" class="image-sep">
-				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-3.jpg" alt="Ali Ewoldt">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-4.jpg" alt="Ali Ewoldt">
 			</section>
 
 			<section id="contact" class="scrolled-slide">
@@ -104,7 +105,7 @@ $section_args = array(
 						<div class="site-info">
 							<p>
 								<?php echo '&copy;' . date( 'Y' ); ?> <?php echo bloginfo( 'name' ); ?><br />
-								Photography by <a href="//billybphotography.com" target="_blank">Billy Bustamante</a><br />
+								Photography by <a href="//dirtysugar.smugmug.com" target="_blank">Dirty Sugar</a><br />
 								Site by <a href="//roundhouse-designs.com" target="_blank">Roundhouse<img id="rhd-logo-footer" src="//assets.roundhouse-designs.com/images/rhd-black-house.png" alt="Roundhouse Designs">Designs</a>
 							</p>
 						</div><!-- .site-info -->
