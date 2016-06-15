@@ -16,10 +16,10 @@ html
 	height 100%
 	text-shadow 0 0 1px transparent
 	font-size 16px
-	color $color1
+	color $c_text
 	margin 0
 	background white
-	font-family $ff-body
+	font-family $ff_body
 
 
 body
@@ -28,13 +28,13 @@ body
 
 a
 	outline 0 !important
-	color $color3
+	color $c_ter
 	text-decoration none
 	transition color 0.25s
 
 	&:hover
 	&:active
-		color $color2
+		color $c_sec
 
 
 h1
@@ -43,25 +43,24 @@ h3
 h4
 h5
 h6
-	font-weight 400
-	font-family $ff-headline
+	-ff-title()
 
 
 input
 	&[type="button"]
 		padding 0.5em 1em
 		font-size 1.1em
-		background $color3
+		background $c_ter
 		color white
 		transition all 0.25s
 		text-align center
 		border none
-		font-family $ff-headline
+		-ff-title()
 
 		&:hover
 		&:active
-			background $color2
-			color $color3
+			background $c_sec
+			color $c_ter
 
 
 #loader
@@ -73,7 +72,7 @@ input
 	background-color white
 	z-index 999
 	text-align center
-	font-family $ff-headline
+	font-family $ff_headline
 
 	.center
 		width 80%
@@ -85,15 +84,15 @@ input
 		text-align center
 
 	img
-		width 198px
-		height 198px
+		width 120px
+		height 120px
 		position relative
 		margin 0 auto
 
 	p
 		font-style italic
-		font-size 1.3em
-		color $color1
+		font-size 1em
+		color $c_text_lt
 
 
 #page
@@ -121,23 +120,22 @@ input
 
 #masthead
 	width 100%
-	height $nav-ht
-	background $color3
+	height $nav_ht
 	position fixed
 	top 0
 	left 0
 	z-index 999
 
 	#site-title
-		font-size 3.6em
+		font-size 2em
 		margin 0
 		position absolute
 		top 57%
 		left 2rem
 		-transform(translateY(-50%))
 		line-height 1
-		color white
-		font-family $ff-title
+		color $c_sec
+		font-family $ff_headline
 
 		a
 			color inherit
@@ -149,21 +147,31 @@ input
 		top 0
 		background-color transparent
 		display none
+		
+		span
+			background $c_sec
+			
+			&:after
+			&:before
+				background @background
+			
+		&.is-active
+			span
+				background transparent
 
 
 #rhd-nav-menu
-	background $color3-trans
+	background $c_ter_trans
 	position absolute
 	display none
 	right 0
-	top $nav-ht
+	top $nav_ht
 	text-align center
 
 	#site-navigation
 		padding-left 0
 		margin 1rem 2rem
-		font-family $ff-headline
-		font-weight 700
+		-ff-title()
 
 		.menu-item
 			font-size 1.4em
@@ -174,7 +182,7 @@ input
 
 				&:hover
 				&:active
-					color $color2
+					color $c_sec
 
 	.widget-rhd-social-icons
 		-wrapper(0.5em, 1.5em, 70%)
@@ -191,7 +199,7 @@ input
 	section
 		width auto
 		max-width 100vw
-		height $section-ht
+		height $section_ht
 		position relative
 		overflow auto
 		float left
@@ -228,14 +236,15 @@ input
 			padding 0
 
 	.section-title
-		font-size 7vh
+		font-size 5vh
 		text-align center;
 		margin 1rem auto 0.5rem auto
-		font-family $ff-title
+		-ff-title()
 
 	.section-content
 		p
 			margin 0.5em 0
+			text-align center
 
 			&:first-child
 				margin-top 0
@@ -249,6 +258,10 @@ input
 
 		img
 			height auto
+		
+		iframe
+			margin 1em auto
+			display block
 
 
 #rhd-logo-footer
@@ -263,7 +276,7 @@ input
 	text-align center
 	margin 2em 0
 	padding-top 2em
-	border-top 1px solid $color2
+	border-top 1px solid $c_sec
 
 	.site-info
 		font-size 0.9em
@@ -285,7 +298,7 @@ input
 		.news-sep
 			-wrapper(3em, 3em, 85%)
 			height 1px
-			background $color2
+			background $c_sec
 
 			&:last-of-type
 				display none
@@ -297,7 +310,7 @@ input
 				max-width 400px
 				display block
 				margin 1em auto
-				border 1px solid $color3
+				border 1px solid $c_ter
 
 	#photos
 		.section-content
@@ -338,7 +351,7 @@ input
 						padding 1em
 						font-size 1.1em
 						text-align left
-						font-family $ff-body
+						font-family $ff_body
 						background rgba(0,0,0,0.5)
 						top initial
 						bottom 0
@@ -352,6 +365,9 @@ input
 			.contact-area
 				margin 1em auto
 				text-align center
+			
+			img
+				margin 1em auto
 
 
 /* ==========================================================================
@@ -361,11 +377,11 @@ input
 @media screen and (min-width 32rem) and (orientation landscape)
 	#rhd-nav-menu
 		width 15em
-		background $color3
+		background $c_ter
 
 	#content
 		section
-			top $nav-ht
+			top $nav_ht
 
 			&.image-sep
 				img
