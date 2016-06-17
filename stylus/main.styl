@@ -325,82 +325,59 @@ input
 		font-family $ff_headline
 		z-index 999
 
+#actress
+	.gallery
+		.gallery-item-sizer
+		.gallery-item
+			width 49%
 
-#content
-	#news
-		.news-sep
-			-wrapper(3em, 3em, 85%)
-			height 1px
-			background $c_sec
+		.gutter-sizer
+			width 1%
 
-			&:last-of-type
-				display none
+		.gallery-item
+			max-width none
+			padding 0
+			overflow hidden
+			cursor pointer
 
-		.news-header
-			img
+			.gallery-caption
+				position absolute
+				display inline
+				left 0
+				top 999px
+				transition all 0.5s ease-out
+				visibility hidden
+
+			&.gigante
 				width 100%
 				height auto
-				max-width 400px
-				display block
-				margin 1em auto
-				border 1px solid $c_ter
 
-	#photos
-		.section-content
-			-wrapper(0, 0, 95%)
-
-		.gallery
-			.gallery-item-sizer
-			.gallery-item
-				width 49%
-
-			.gutter-sizer
-				width 1%
-
-			.gallery-item
-				max-width none
-				padding 0
-				overflow hidden
-				cursor pointer
-
-				.gallery-caption
-					position absolute
-					display inline
-					left 0
-					top 999px
-					transition all 0.5s ease-out
-					visibility hidden
-
-				&.gigante
+				img
 					width 100%
 					height auto
 
-					img
-						width 100%
-						height auto
+				.gallery-caption
+					width 100%
+					padding 1em
+					font-size 1.1em
+					text-align left
+					font-family $ff_body
+					background rgba(0,0,0,0.5)
+					top initial
+					bottom 0
+					visibility visible
+					color white
 
-					.gallery-caption
-						width 100%
-						padding 1em
-						font-size 1.1em
-						text-align left
-						font-family $ff_body
-						background rgba(0,0,0,0.5)
-						top initial
-						bottom 0
-						visibility visible
-						color white
+#contact
+	padding-bottom 1em
 
-	#contact
-		padding-bottom 1em
-
-		.section-content
-			.contact-area
-				margin 1em auto
-				text-align center
-			
-			img
-				margin 1em auto
+	.section-content
+		.contact-area
+			margin 1em auto
+			text-align center
+		
+		img
+			margin 1em auto
 
 
 /* ==========================================================================
@@ -424,19 +401,10 @@ input
 					width auto
 					height 100%
 
-		#news
-			width 40vw
+	#actress
+		width 70vw
 
-			.news-sep
-				width 75%
-
-		#about
-			width 35vw
-
-		#photos
-			width 70vw
-
-			.gallery
-				.gallery-item-sizer
-				.gallery-item
-					width 32.665%
+		.gallery
+			.gallery-item-sizer
+			.gallery-item
+				width 32.665%

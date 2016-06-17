@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 5:51:31 PM on 15-06-2016
+* RHD Dev: Compiled at 8:46:14 PM on 16-06-2016
 ***/
 
 .unselectable {
@@ -174,8 +174,8 @@
   transform: translateX(-5.333333px) translateY(-2.6666665px) rotate(45deg);
 }
 @font-face {
-  font-family: 'Floraless';
-  src: url("fonts/floraless-webfont.woff2") format('woff2'), url("fonts/floraless-webfont.woff") format('woff');
+  font-family: 'Ranchers';
+  src: url("fonts/ranchers-regular-webfont.woff2") format('woff2'), url("fonts/ranchers-regular-webfont.woff") format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -434,7 +434,7 @@ input[type="button"]:active {
   background-color: #fff;
   z-index: 999;
   text-align: center;
-  font-family: 'Floraless', sans-serif;
+  font-family: 'Ranchers', sans-serif;
 }
 #loader .center {
   width: 80%;
@@ -495,7 +495,7 @@ input[type="button"]:active {
   transform: translateY(-50%);
   line-height: 1;
   color: #924155;
-  font-family: 'Floraless', sans-serif;
+  font-family: 'Ranchers', sans-serif;
 }
 #masthead #site-title a {
   color: inherit;
@@ -679,48 +679,23 @@ input[type="button"]:active {
   left: 2rem;
   color: #fff;
   font-size: 1.2em;
-  font-family: 'Floraless', sans-serif;
+  font-family: 'Ranchers', sans-serif;
   z-index: 999;
 }
-#content #news .news-sep {
-  width: 85%;
-  max-width: 64rem;
-  position: relative;
-  margin: 3em auto 3em auto;
-  height: 1px;
-  background: #924155;
-}
-#content #news .news-sep:last-of-type {
-  display: none;
-}
-#content #news .news-header img {
-  width: 100%;
-  height: auto;
-  max-width: 400px;
-  display: block;
-  margin: 1em auto;
-  border: 1px solid #3377be;
-}
-#content #photos .section-content {
-  width: 95%;
-  max-width: 64rem;
-  position: relative;
-  margin: 0 auto 0 auto;
-}
-#content #photos .gallery .gallery-item-sizer,
-#content #photos .gallery .gallery-item {
+#actress .gallery .gallery-item-sizer,
+#actress .gallery .gallery-item {
   width: 49%;
 }
-#content #photos .gallery .gutter-sizer {
+#actress .gallery .gutter-sizer {
   width: 1%;
 }
-#content #photos .gallery .gallery-item {
+#actress .gallery .gallery-item {
   max-width: none;
   padding: 0;
   overflow: hidden;
   cursor: pointer;
 }
-#content #photos .gallery .gallery-item .gallery-caption {
+#actress .gallery .gallery-item .gallery-caption {
   position: absolute;
   display: inline;
   left: 0;
@@ -728,15 +703,15 @@ input[type="button"]:active {
   transition: all 0.5s ease-out;
   visibility: hidden;
 }
-#content #photos .gallery .gallery-item.gigante {
+#actress .gallery .gallery-item.gigante {
   width: 100%;
   height: auto;
 }
-#content #photos .gallery .gallery-item.gigante img {
+#actress .gallery .gallery-item.gigante img {
   width: 100%;
   height: auto;
 }
-#content #photos .gallery .gallery-item.gigante .gallery-caption {
+#actress .gallery .gallery-item.gigante .gallery-caption {
   width: 100%;
   padding: 1em;
   font-size: 1.1em;
@@ -748,14 +723,14 @@ input[type="button"]:active {
   visibility: visible;
   color: #fff;
 }
-#content #contact {
+#contact {
   padding-bottom: 1em;
 }
-#content #contact .section-content .contact-area {
+#contact .section-content .contact-area {
   margin: 1em auto;
   text-align: center;
 }
-#content #contact .section-content img {
+#contact .section-content img {
   margin: 1em auto;
 }
 /* ==========================================================================
@@ -775,20 +750,11 @@ input[type="button"]:active {
     width: auto;
     height: 100%;
   }
-  #content #news {
-    width: 40vw;
-  }
-  #content #news .news-sep {
-    width: 75%;
-  }
-  #content #about {
-    width: 35vw;
-  }
-  #content #photos {
+  #actress {
     width: 70vw;
   }
-  #content #photos .gallery .gallery-item-sizer,
-  #content #photos .gallery .gallery-item {
+  #actress .gallery .gallery-item-sizer,
+  #actress .gallery .gallery-item {
     width: 32.665%;
   }
 }

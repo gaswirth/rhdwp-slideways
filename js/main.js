@@ -132,6 +132,9 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 
 
 	function rhdPackery() {
+		var $gallery = $('#actress .gallery'),
+			$gridItem = $('#actress .gallery .gallery-item');
+		
 		$gallery.imagesLoaded(function(){
 			$gallery.packery({
 				columnWidth: '.gallery-item-sizer',
@@ -142,6 +145,7 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 		});
 
 		$gallery.on('click', '.gallery-item', function(event){
+			event.preventDefault();
 			var $item = $(event.currentTarget);
 			$item.toggleClass('gigante');
 
@@ -152,5 +156,5 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 			}
 		});
 	}
-
+	
 })(jQuery);
