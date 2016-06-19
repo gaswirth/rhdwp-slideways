@@ -107,7 +107,7 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 				w += parseInt($this.width(), 10) + parseInt($this.css('paddingLeft'), 10) + parseInt($this.css('paddingRight'), 10);
 			});
 		}
-		
+
 		scrolledCt = $('.scrolled-slide').length;
 		borders = parseInt($('.scrolled-slide').css('borderLeftWidth')) * 2;
 		borderTtl = borders * scrolledCt;
@@ -132,9 +132,9 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 
 
 	function rhdPackery() {
-		var $gallery = $('#actress .gallery'),
-			$gridItem = $('#actress .gallery .gallery-item');
-		
+		var $gallery = $('#performer .gallery'),
+			$gridItem = $('#performer .gallery .gallery-item');
+
 		$gallery.imagesLoaded(function(){
 			$gallery.packery({
 				columnWidth: '.gallery-item-sizer',
@@ -156,5 +156,5 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 			}
 		});
 	}
-	
+
 })(jQuery);

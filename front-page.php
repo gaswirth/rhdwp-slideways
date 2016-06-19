@@ -26,7 +26,7 @@ $section_args = array(
 
 			<section id="performer" class="scrolled-slide">
 				<?php
-				$section_args['name'] = 'performer';
+				$section_args['p'] = 11;
 				$section = get_posts( $section_args );
 				?>
 
@@ -46,7 +46,7 @@ $section_args = array(
 
 			<section id="entrepreneur" class="scrolled-slide">
 				<?php
-				$section_args['name'] = 'entrepreneur';
+				$section_args['p'] = 14;
 				$section = get_posts( $section_args );
 				?>
 
@@ -65,9 +65,9 @@ $section_args = array(
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-3.jpg" alt="Sheri Sanders">
 			</section>
 
-			<section id="rock-the-audition" class="scrolled-slide">
+			<section id="rock-the-performance" class="scrolled-slide">
 				<?php
-				$section_args['name'] = 'rock-the-performance';
+				$section_args['p'] = 16;
 				$section = get_posts( $section_args );
 				?>
 
@@ -88,7 +88,7 @@ $section_args = array(
 
 			<section id="contact" class="scrolled-slide">
 				<?php
-				$section_args['name'] = 'contact';
+				$section_args['p'] = 18;
 				$section = get_posts( $section_args );
 				?>
 

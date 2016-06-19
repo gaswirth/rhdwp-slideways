@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 2:01:30 PM on 19-06-2016
+* RHD Dev: Compiled at 2:06:16 PM on 19-06-2016
 ***/
 
 /**
@@ -606,7 +606,7 @@ input[type="button"]:active {
   padding: 0;
 }
 #content .section-title {
-  font-size: 4.5vh;
+  font-size: 4vh;
   text-align: center;
   margin: 1em auto;
   font-family: 'Open Sans', sans-serif;
@@ -672,20 +672,20 @@ input[type="button"]:active {
   font-family: 'Ranchers', sans-serif;
   z-index: 999;
 }
-#actress .gallery .gallery-item-sizer,
-#actress .gallery .gallery-item {
+#performer .gallery .gallery-item-sizer,
+#performer .gallery .gallery-item {
   width: 49%;
 }
-#actress .gallery .gutter-sizer {
+#performer .gallery .gutter-sizer {
   width: 1%;
 }
-#actress .gallery .gallery-item {
+#performer .gallery .gallery-item {
   max-width: none;
   padding: 0;
   overflow: hidden;
   cursor: pointer;
 }
-#actress .gallery .gallery-item .gallery-caption {
+#performer .gallery .gallery-item .gallery-caption {
   position: absolute;
   display: inline;
   left: 0;
@@ -693,15 +693,15 @@ input[type="button"]:active {
   transition: all 0.5s ease-out;
   visibility: hidden;
 }
-#actress .gallery .gallery-item.gigante {
+#performer .gallery .gallery-item.gigante {
   width: 100%;
   height: auto;
 }
-#actress .gallery .gallery-item.gigante img {
+#performer .gallery .gallery-item.gigante img {
   width: 100%;
   height: auto;
 }
-#actress .gallery .gallery-item.gigante .gallery-caption {
+#performer .gallery .gallery-item.gigante .gallery-caption {
   width: 100%;
   padding: 1em;
   font-size: 1.1em;
@@ -737,11 +737,11 @@ input[type="button"]:active {
     width: auto;
     height: 100%;
   }
-  #actress {
+  #performer {
     width: 70vw;
   }
-  #actress .gallery .gallery-item-sizer,
-  #actress .gallery .gallery-item {
+  #performer .gallery .gallery-item-sizer,
+  #performer .gallery .gallery-item {
     width: 32.665%;
   }
 }
