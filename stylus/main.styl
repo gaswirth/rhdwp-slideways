@@ -148,14 +148,14 @@ input
 		top 0
 		background-color transparent
 		display none
-		
+
 		span
 			background $c_sec
-			
+
 			&:after
 			&:before
 				background @background
-			
+
 		&.is-active
 			span
 				background transparent
@@ -216,7 +216,7 @@ input
 			.section-content
 				-wrapper()
 				padding 1em 0
-		
+
 		&.slide
 		&.full-slide
 			max-width 100vw
@@ -269,7 +269,7 @@ input
 
 		img
 			height auto
-		
+
 		iframe
 			margin 1em auto
 			display block
@@ -307,21 +307,15 @@ input
 #full-1
 	width 100vw !important
 	overflow hidden !important
-	
-	img
-		width 100% !important
-		height auto !important
-		position absolute
-		top 0
-		left 50%
-		-transform(translateX(-50%))
-	
+	background-image url($updir + "/2016/06/Sheri-1.jpg")
+	background-size cover
+
 	.scroll-text
 		position absolute
 		bottom 4rem
 		left 2rem
 		color white
-		font-size 1.2em
+		font-size 1.3em
 		font-family $ff_headline
 		z-index 999
 
@@ -375,7 +369,7 @@ input
 		.contact-area
 			margin 1em auto
 			text-align center
-		
+
 		img
 			margin 1em auto
 
@@ -387,7 +381,7 @@ input
 @media screen and (min-width 32rem) and (orientation landscape)
 	#rhd-nav-menu
 		width 20em
-		
+
 		#site-navigation
 			.menu-item
 				font-size 1.2rem

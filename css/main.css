@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 8:46:14 PM on 16-06-2016
+* RHD Dev: Compiled at 2:01:30 PM on 19-06-2016
 ***/
 
 .unselectable {
@@ -663,22 +663,15 @@ input[type="button"]:active {
 #full-1 {
   width: 100vw !important;
   overflow: hidden !important;
-}
-#full-1 img {
-  width: 100% !important;
-  height: auto !important;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+  background-image: url("//dev.roundhouse-designs.com/sheri-sanders/wp-content/uploads/2016/06/Sheri-1.jpg");
+  background-size: cover;
 }
 #full-1 .scroll-text {
   position: absolute;
   bottom: 4rem;
   left: 2rem;
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-family: 'Ranchers', sans-serif;
   z-index: 999;
 }

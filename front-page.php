@@ -20,13 +20,13 @@ $section_args = array(
 		<div id="content" role="main">
 
 			<section id="full-1" class="image-sep">
-				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-1.jpg" alt="Ali Ewoldt">
+				<img class="invisible" src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-1.jpg" alt="Sheri Sanders">
 				<div class="scroll-text">Scroll &rarr;</div>
 			</section>
 
-			<section id="actress" class="scrolled-slide">
+			<section id="performer" class="scrolled-slide">
 				<?php
-				$section_args['name'] = 'actress';
+				$section_args['name'] = 'performer';
 				$section = get_posts( $section_args );
 				?>
 
@@ -41,7 +41,7 @@ $section_args = array(
 			</section>
 
 			<section id="full-2" class="image-sep">
-				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-2.jpg" alt="Ali Ewoldt">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-2.jpg" alt="Sheri Sanders">
 			</section>
 
 			<section id="entrepreneur" class="scrolled-slide">
@@ -62,7 +62,7 @@ $section_args = array(
 			</section>
 
 			<section id="full-3" class="image-sep">
-				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-3.jpg" alt="Ali Ewoldt">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-3.jpg" alt="Sheri Sanders">
 			</section>
 
 			<section id="rock-the-audition" class="scrolled-slide">
@@ -83,7 +83,7 @@ $section_args = array(
 			</section>
 
 			<section id="full-4" class="image-sep">
-				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-4.jpg" alt="Ali Ewoldt">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-4.jpg" alt="Sheri Sanders">
 			</section>
 
 			<section id="contact" class="scrolled-slide">
@@ -112,9 +112,9 @@ $section_args = array(
 					</footer>
 				</div>
 			</section>
-			
+
 			<section id="full-5" class="image-sep">
-				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-5.jpg" alt="Ali Ewoldt">
+				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-5.jpg" alt="Sheri Sanders">
 			</section>
 
 		</div><!-- #content -->
