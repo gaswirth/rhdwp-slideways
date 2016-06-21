@@ -65,7 +65,7 @@ $section_args = array(
 				<img src="<?php echo RHD_UPLOAD_URL; ?>/2016/06/Sheri-3.jpg" alt="Sheri Sanders">
 			</section>
 
-			<section id="rock-the-performance" class="scrolled-slide">
+			<section id="rock-the-audition" class="scrolled-slide">
 				<?php
 				$section_args['p'] = 16;
 				$section = get_posts( $section_args );
