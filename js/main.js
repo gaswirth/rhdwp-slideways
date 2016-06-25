@@ -66,15 +66,22 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 		100);
 
 		$("#site-navigation .menu-item a").on('click', function(e){
+			e.preventDefault();
+			
 			var elemID = $(this).attr('href'),
 				elemLeft = $(elemID).offset().left,
+				elemTop = $(elemID).offset().top,
 				cush = $window.width() * 0.05;
-
-			e.preventDefault();
-
-			$('html, body').animate({
-				scrollLeft: elemLeft - cush
-			});
+			
+			if ( getOrient() == 'land' ) {
+				$('html, body').animate({
+					scrollLeft: elemLeft - cush
+				});
+			} else if ( getOrient() == 'port' ) {
+				$('html, body').animate({
+					scrollTop: elemTop
+				});
+			}
 		});
 
 		$("#site-title a").on('click', function(e){
