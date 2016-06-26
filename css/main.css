@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 4:18:58 PM on 25-06-2016
+* RHD Dev: Compiled at 2:34:17 PM on 26-06-2016
 ***/
 
 .unselectable {
@@ -351,6 +351,11 @@ img.aligncenter {
     float: none;
     display: block;
   }
+  #main #content section.slide .section-content,
+  #main #content section.scrolled-slide .section-content,
+  #main #content section.full-slide .section-content {
+    width: 100%;
+  }
   #main #content section.slide {
     width: 90%;
     max-width: 64rem;
@@ -580,7 +585,7 @@ input[type="button"]:active {
 #content section.slide .section-content,
 #content section.scrolled-slide .section-content,
 #content section.full-slide .section-content {
-  width: 85%;
+  width: 95%;
   max-width: 64rem;
   position: relative;
   margin: 0 auto 0 auto;
