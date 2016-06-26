@@ -31,24 +31,9 @@ $updir = '//dev.roundhouse-designs.com/aliewoldt/wp-content/uploads'
 
 // Functions
 
--wrapper( $topMargin = false, $bottomMargin = false, $customWidth = false, $customMax = false )
-	if $customWidth == false
-		$w = 85%
-	else
-		$w = $customWidth
-
-	if $customMax == false
-		$mw = 64rem
-	else
-		$mw = $customMax
-
-	if $topMargin == false
-		$topMargin = 0
-	if $bottomMargin == false
-		$bottomMargin = 0
-
-	width $w
-	max-width $mw
+-wrapper( $topMargin = 0, $bottomMargin = 0, $customWidth = 85%, $customMax = 64rem )
+	width $customWidth
+	max-width $customMax
 	position relative
 	margin $topMargin auto $bottomMargin auto
 
