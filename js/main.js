@@ -20,7 +20,8 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 
 (function($){
 	var mw = false,
-		orient = null;
+		orient = null,
+		toggles = $(".c-hamburger");
 
 	$(document).ready(function($){
 
@@ -67,12 +68,12 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 
 		$("#site-navigation .menu-item a").on('click', function(e){
 			e.preventDefault();
-			
+
 			var elemID = $(this).attr('href'),
 				elemLeft = $(elemID).offset().left,
 				elemTop = $(elemID).offset().top,
 				cush = $window.width() * 0.05;
-			
+
 			if ( getOrient() == 'land' ) {
 				$('html, body').animate({
 					scrollLeft: elemLeft - cush
@@ -80,6 +81,9 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 			} else if ( getOrient() == 'port' ) {
 				$('html, body').animate({
 					scrollTop: elemTop
+				}, function(){
+					toggles.removeClass('is-active');
+					$("#rhd-nav-menu").slideUp();
 				});
 			}
 		});
@@ -128,11 +132,9 @@ var	isFrontPage = ( $body.hasClass('front-page') === true ) ? true : false,
 
 	// Adapted from Hamburger Icons: https://github.com/callmenick/Animating-Hamburger-Icons
 	function toggleBurger() {
-		var toggles = $(".c-hamburger");
-
 		toggles.click(function(e){
 			e.preventDefault();
-			$(this).toggleClass('is-active');
+			toggles.toggleClass('is-active');
 			$("#rhd-nav-menu").slideToggle();
 		});
 	}
