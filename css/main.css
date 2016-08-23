@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 2:34:17 PM on 26-06-2016
+* RHD Dev: Compiled at 12:20:15 PM on 23-08-2016
 ***/
 
 .unselectable {
@@ -589,7 +589,12 @@ input[type="button"]:active {
   max-width: 64rem;
   position: relative;
   margin: 0 auto 0 auto;
-  padding: 1em 0;
+  padding: 1em 0.25em;
+}
+#content section.slide .section-content p,
+#content section.scrolled-slide .section-content p,
+#content section.full-slide .section-content p {
+  line-height: 1.5;
 }
 #content section.slide,
 #content section.full-slide {
@@ -622,7 +627,7 @@ input[type="button"]:active {
 #content .section-title {
   font-size: 4vh;
   text-align: center;
-  margin: 1em auto;
+  margin: 0.5em auto 1em;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   color: #924155;
@@ -676,6 +681,7 @@ input[type="button"]:active {
    ========================================================================== */
 #full-1 {
   width: 100vw !important;
+  height: 100vh !important;
   background-image: url("//sheri-sanders.com/wp-content/uploads/2016/06/Sheri-1.jpg");
   background-size: cover;
 }

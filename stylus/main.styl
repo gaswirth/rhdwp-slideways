@@ -215,7 +215,10 @@ input
 
 			.section-content
 				-wrapper()
-				padding 1em 0
+				padding 1em 0.25em
+
+				p
+					line-height 1.5
 
 		&.slide
 		&.full-slide
@@ -248,7 +251,7 @@ input
 	.section-title
 		font-size 4vh
 		text-align center;
-		margin 1em auto
+		margin 0.5em auto 1em
 		-ff-title(400)
 		color $c_sec
 
@@ -306,6 +309,7 @@ input
 
 #full-1
 	width 100vw !important
+	height 100vh !important
 	background-image url($updir + "/2016/06/Sheri-1.jpg")
 	background-size cover
 
