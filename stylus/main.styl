@@ -250,6 +250,9 @@ input
 		img
 			height auto
 
+	.pix-wrapper /* infinite load more plugin */
+		margin-bottom 35px
+
 
 #rhd-logo-footer
 	width 1.35em
@@ -282,6 +285,16 @@ input
 
 #content
 	#news
+		.news-entry
+			padding-bottom 1.5em
+			margin-bottom 1.5em
+			border-bottom 1px solid $color2
+		
+			&:last-of-type
+				border-bottom 0
+				padding-bottom 0
+				border-bottom none
+
 		.news-sep
 			-wrapper(3em, 3em, 85%)
 			height 1px

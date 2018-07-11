@@ -49,9 +49,7 @@ $section_args = array(
 										<div class="news-content">
 											<?php the_content(); ?>
 										</div><!-- .entry-content -->
-
 									</article><!-- #post -->
-									<hr class="news-sep">
 								<?php endif; ?>
 						<?php endwhile; ?>
 
